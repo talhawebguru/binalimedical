@@ -6,10 +6,16 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      primary: ["var(--font-roboto-condensed)", "sans-serif"],
+      secondary: ["var(--font-montserrat)", "sans-serif"],
+      tertiary: ["var(--font-anton)", "sans-serif"],
+      quaternary: ["var(--font-nunito)", "sans-serif"],
+    },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#007ddf", 
+        secondary: "#1f2b76",
       },
     },
   },
