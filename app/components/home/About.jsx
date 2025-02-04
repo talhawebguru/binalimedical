@@ -29,7 +29,7 @@ const About = () => {
                 </p>
               </div>
               <div className="">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-center  gap-3">
                     <div className="bg-primary flex items-center justify-center w-6 h-5 rounded-full">
                       <FaArrowRightLong className="text-white" />

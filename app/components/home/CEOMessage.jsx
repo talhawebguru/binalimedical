@@ -31,7 +31,7 @@ const CEOMessage = () => {
             to the opportunity to serve you.
             <br />
             <br />
-            OMAR ALI <br />
+            <span className="text-3xl">OMAR ALI</span> <br />
             Bin Ali Medical Supplies LLC
           </p>
         </div>
