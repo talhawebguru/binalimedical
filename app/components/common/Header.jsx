@@ -5,10 +5,13 @@ import Logo from "@/public/images/logo.svg";
 import Link from "next/link";
 import { MdMenu } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from 'next/navigation'
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname()
+  const isHomePage = pathname === "/";
 
   const headerVariants = {
     hidden: { opacity: 0, y: -50 },
@@ -22,7 +25,7 @@ const Header = () => {
 
   return (
     <motion.div
-      className="border-b border-primary absolute top-0 left-0 w-full z-10"
+      className={`border-b border-primary top-0 left-0 w-full z-10 ${isHomePage ? 'absolute' : 'block'}`}
       variants={headerVariants}
       initial="hidden"
       animate="visible"
@@ -34,13 +37,25 @@ const Header = () => {
           </div>
           <div className="hidden md:flex items-center space-x-10">
             <nav>
-              <ul className="flex items-center space-x-6 font-primary text-base font-normal leading-6 text-white cursor-pointer">
-                <li>Home</li>
-                <li>About</li>
-                <li>Our Products</li>
-                <li>Customers</li>
-                <li>Careers</li>
-                <li>Contact</li>
+              <ul className={`flex items-center space-x-6 font-primary text-base font-normal leading-6 ${isHomePage ? 'text-white' : 'text-[rgb(31,43,118)]'}`}>
+                <Link href={"/"}>
+                  <li className="cursor-pointer">Home</li>
+                </Link>
+                <Link href={"/about"}>
+                  <li className="cursor-pointer">About</li>
+                </Link>
+                <Link href={"/products"}>
+                  <li className="cursor-pointer">Our Products</li>
+                </Link>
+                <Link href={"/customers"}>
+                  <li className="cursor-pointer">Customers</li>
+                </Link>
+                <Link href={"/careers"}>
+                  <li className="cursor-pointer">Careers</li>
+                </Link>
+                <Link href={"/contact"}>
+                  <li className="cursor-pointer">Contact</li>
+                </Link>
               </ul>
             </nav>
             <Link
