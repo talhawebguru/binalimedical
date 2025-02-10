@@ -8,14 +8,14 @@ import customer4 from "@/public/images/customersImages/healthAuthority.jpg";
 import customer5 from "@/public/images/customersImages/sheikhKhalifaMedi.jpg";
 import customer6 from "@/public/images/customersImages/alnoorHospital.jpg";
 import customer7 from "@/public/images/customersImages/departmentOfHealthDubai.jpg";
-import customer8 from "@/public/images/customersImages/alAinHospital.jpg";
+import customer8 from "@/public/images/customersImages/alainHospital.jpg";
 import customer9 from "@/public/images/customersImages/nmc.jpg";
 import customer10 from "@/public/images/customersImages/centerOfAmbulance.jpg";
 import customer11 from "@/public/images/customersImages/abudhabiCityMunicipality.jpg";
 import customer12 from "@/public/images/customersImages/almafraq.jpg";
 import customer13 from "@/public/images/customersImages/ambulatoryHealth.jpg";
 import customer14 from "@/public/images/customersImages/americanHospital.jpg";
-import customer15 from "@/public/images/customersImages/abuDhabiDistributionCo.jpg";
+import customer15 from "@/public/images/customersImages/abudhabiDistributionCo.jpg";
 import customer16 from "@/public/images/customersImages/alrahhbaHospital.jpg";
 import customer17 from "@/public/images/customersImages/ghqArmedForces.jpg";
 
