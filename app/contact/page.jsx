@@ -29,7 +29,7 @@ const page = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-10">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             <motion.div
-              className="col-span-4"
+              className="md:col-span-4"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -87,7 +87,7 @@ const page = () => {
               </motion.form>
             </motion.div>
             <motion.div
-              className="col-span-8 grid grid-cols-2 gap-10"
+              className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-10"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"

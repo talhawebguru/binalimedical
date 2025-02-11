@@ -72,7 +72,7 @@ const Hero = () => {
           </motion.p>
         </motion.div>
         <motion.div
-          className="border border-[rgb(7,135,253)] bg-white rounded-2xl p-4"
+          className="border border-[rgb(7,135,253)] bg-white rounded-2xl p-4 mt-5 md:mt-0 h-full"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

@@ -51,7 +51,7 @@ const Header = () => {
             />
           </Link>
 
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden lg:flex items-center space-x-10">
             <nav>
               <ul
                 className={`flex items-center space-x-6 font-primary text-base font-normal leading-6 ${
@@ -101,7 +101,7 @@ const Header = () => {
           </div>
 
           <button
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setIsMobileMenuOpen(true)}
           >
             <MdMenu
@@ -141,22 +141,36 @@ const Header = () => {
 
             <nav className="mt-10">
               <ul className="flex flex-col space-y-6 text-lg font-medium text-gray-900">
-                {[
-                  "Home",
-                  "About",
-                  "Our Products",
-                  "Customers",
-                  "Careers",
-                  "Contact",
-                ].map((item, index) => (
-                  <Link
-                    key={index}
-                    href={`/${item.toLowerCase().replace(/ /g, "")}`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <li className="hover:text-primary transition">{item}</li>
-                  </Link>
-                ))}
+                     <Link href={"/"} onClick={() => setIsMobileMenuOpen(false)}>
+                     <li className="cursor-pointer hover:text-primary transition">
+                       Home
+                     </li>
+                   </Link>
+                   <Link href={"/about"} onClick={() => setIsMobileMenuOpen(false)}>
+                     <li className="cursor-pointer hover:text-primary transition">
+                       About
+                     </li>
+                   </Link>
+                   <Link href={"/products"} onClick={() => setIsMobileMenuOpen(false)}>
+                     <li className="cursor-pointer hover:text-primary transition">
+                       Our Products
+                     </li>
+                   </Link>
+                   <Link href={"/customers"} onClick={() => setIsMobileMenuOpen(false)}>
+                     <li className="cursor-pointer hover:text-primary transition">
+                       Customers
+                     </li>
+                   </Link>
+                   <Link href={"/careers"} onClick={() => setIsMobileMenuOpen(false)}>
+                     <li className="cursor-pointer hover:text-primary transition">
+                       Careers
+                     </li>
+                   </Link>
+                   <Link href={"/contact"} onClick={() => setIsMobileMenuOpen(false)}>
+                     <li className="cursor-pointer hover:text-primary transition">
+                       Contact
+                     </li>
+                   </Link>
               </ul>
             </nav>
             <Link
