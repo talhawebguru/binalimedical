@@ -83,6 +83,8 @@ const CustomerCard = () => {
               key={index}
               className="bg-white rounded-3xl p-5 shadow-md flex flex-col items-center justify-center"
               variants={itemVariants}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Image
                 src={customer.src}
