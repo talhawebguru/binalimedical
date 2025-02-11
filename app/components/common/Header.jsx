@@ -94,7 +94,7 @@ const Header = () => {
               href="http://binalimain.qnoddns.org.cn:9090/BAMS/CustomerLogin"
               target="_blank"
             >
-              <button className="bg-primary text-white py-2 px-4 rounded-full hover:bg-opacity-80 transition">
+              <button aria-label="Web Store" className="bg-primary text-white py-2 px-4 rounded-full hover:bg-opacity-80 transition">
                 Web Store
               </button>
             </Link>
@@ -102,6 +102,7 @@ const Header = () => {
 
           <button
             className="lg:hidden"
+            aria-label="Open Menu"
             onClick={() => setIsMobileMenuOpen(true)}
           >
             <MdMenu
@@ -134,6 +135,7 @@ const Header = () => {
           >
             <button
               className="absolute top-4 right-4 text-gray-800"
+              aria-label="Close Menu"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <IoMdClose className="h-6 w-6" />
