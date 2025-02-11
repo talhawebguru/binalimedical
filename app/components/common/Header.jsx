@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import Logo from "@/public/images/logo.svg";
@@ -6,105 +6,167 @@ import Link from "next/link";
 import { MdMenu } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname()
+  const pathname = usePathname();
   const isHomePage = pathname === "/";
 
   const headerVariants = {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-
-  const mobileMenuVariants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  const menuVariants = {
+    hidden: { x: "100%", opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.3, ease: "easeOut" },
+    },
+    exit: {
+      x: "100%",
+      opacity: 0,
+      transition: { duration: 0.2, ease: "easeIn" },
+    },
   };
 
   return (
     <motion.div
-      className={`border-b border-primary top-0 left-0 w-full z-10 ${isHomePage ? 'absolute' : 'block'}`}
+      className={`border-b border-primary top-0 left-0 w-full z-20 ${
+        isHomePage ? "absolute" : "relative"
+      }`}
       variants={headerVariants}
       initial="hidden"
       animate="visible"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-1">
-        <div className="flex items-center justify-between py-2.5">
-          <div>
-            <Image src={Logo} alt="Bin Ali Medical Logo" className="w-[130px] h-[60px]" width={130} height={60} />
-          </div>
+        <div className="flex items-center justify-between py-3">
+          <Link href={"/"}>
+            <Image
+              src={Logo}
+              alt="Bin Ali Medical Logo"
+              width={130}
+              height={60}
+            />
+          </Link>
+
           <div className="hidden md:flex items-center space-x-10">
             <nav>
-              <ul className={`flex items-center space-x-6 font-primary text-base font-normal leading-6 ${isHomePage ? 'text-white' : 'text-[rgb(31,43,118)]'}`}>
+              <ul
+                className={`flex items-center space-x-6 font-primary text-base font-normal leading-6 ${
+                  isHomePage ? "text-white" : "text-[rgb(31,43,118)]"
+                }`}
+              >
                 <Link href={"/"}>
-                  <li className="cursor-pointer">Home</li>
+                  <li className="cursor-pointer hover:text-primary transition">
+                    Home
+                  </li>
                 </Link>
                 <Link href={"/about"}>
-                  <li className="cursor-pointer">About</li>
+                  <li className="cursor-pointer hover:text-primary transition">
+                    About
+                  </li>
                 </Link>
                 <Link href={"/products"}>
-                  <li className="cursor-pointer">Our Products</li>
+                  <li className="cursor-pointer hover:text-primary transition">
+                    Our Products
+                  </li>
                 </Link>
                 <Link href={"/customers"}>
-                  <li className="cursor-pointer">Customers</li>
+                  <li className="cursor-pointer hover:text-primary transition">
+                    Customers
+                  </li>
                 </Link>
                 <Link href={"/careers"}>
-                  <li className="cursor-pointer">Careers</li>
+                  <li className="cursor-pointer hover:text-primary transition">
+                    Careers
+                  </li>
                 </Link>
                 <Link href={"/contact"}>
-                  <li className="cursor-pointer">Contact</li>
+                  <li className="cursor-pointer hover:text-primary transition">
+                    Contact
+                  </li>
                 </Link>
               </ul>
             </nav>
             <Link
               href="http://binalimain.qnoddns.org.cn:9090/BAMS/CustomerLogin"
               target="_blank"
-              rel="noopener noreferrer"
             >
-              <button className="bg-primary flex justify-center items-center text-white font-primary text-base font-normal leading-6 py-1.5 px-3 rounded-full">Web Store</button>
+              <button className="bg-primary text-white py-2 px-4 rounded-full hover:bg-opacity-80 transition">
+                Web Store
+              </button>
             </Link>
           </div>
-          <div className="md:hidden">
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-              {isMobileMenuOpen ? (
-                <IoMdClose className="h-6 w-6 text-black" />
-              ) : (
-                <MdMenu className="h-6 w-6 text-black" />
-              )}
-            </button>
-          </div>
+
+          <button
+            className="md:hidden"
+            onClick={() => setIsMobileMenuOpen(true)}
+          >
+            <MdMenu
+              className={`h-7 w-7 ${
+                isHomePage ? "text-white" : "text-gray-900"
+              }`}
+            />
+          </button>
         </div>
       </div>
+
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden bg-white border-t border-primary"
+            className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-md z-30"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+
+        {isMobileMenuOpen && (
+          <motion.div
+            className="fixed top-0 right-0 w-3/4 max-w-[280px] h-full bg-white shadow-lg z-40 flex flex-col items-center py-6"
+            variants={menuVariants}
             initial="hidden"
             animate="visible"
-            exit="hidden"
-            variants={mobileMenuVariants}
+            exit="exit"
           >
-            <nav>
-              <ul className="flex flex-col items-center space-y-4 py-4 font-primary text-base font-normal leading-6 text-black cursor-pointer">
-                <li>Home</li>
-                <li>About</li>
-                <li>Our Products</li>
-                <li>Customers</li>
-                <li>Careers</li>
-                <li>Contact</li>
-                <li>
+            <button
+              className="absolute top-4 right-4 text-gray-800"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <IoMdClose className="h-6 w-6" />
+            </button>
+
+            <nav className="mt-10">
+              <ul className="flex flex-col space-y-6 text-lg font-medium text-gray-900">
+                {[
+                  "Home",
+                  "About",
+                  "Our Products",
+                  "Customers",
+                  "Careers",
+                  "Contact",
+                ].map((item, index) => (
                   <Link
-                    href="http://binalimain.qnoddns.org.cn:9090/BAMS/CustomerLogin"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    key={index}
+                    href={`/${item.toLowerCase().replace(/ /g, "")}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <button className="bg-primary flex justify-center items-center text-white font-primary text-base font-normal leading-6 py-1.5 px-3 rounded-full">Web Store</button>
+                    <li className="hover:text-primary transition">{item}</li>
                   </Link>
-                </li>
+                ))}
               </ul>
             </nav>
+            <Link
+              href="http://binalimain.qnoddns.org.cn:9090/BAMS/CustomerLogin"
+              target="_blank"
+            >
+              <button className="mt-6 bg-primary text-white py-2 px-4 rounded-full hover:bg-opacity-80 transition">
+                Web Store
+              </button>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
