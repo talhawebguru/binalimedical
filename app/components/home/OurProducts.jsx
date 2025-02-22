@@ -43,7 +43,7 @@ import Logo38 from "@/public/images/binalilogo/image 323.png";
 import Logo39 from "@/public/images/binalilogo/innate-1218x426 1.png";
 import Logo40 from "@/public/images/binalilogo/istem-logo-son 1.png";
 import Logo41 from "@/public/images/binalilogo/meritorganics-comp255367 1.png";
-import Logo42 from "@/public/images/binalilogo/mindray_logo.png";
+import Logo42 from "@/public/images/binalilogo/Mindray_logo.png";
 import Logo43 from "@/public/images/binalilogo/primed-logo_n 1.png";
 import Logo44 from "@/public/images/binalilogo/rendition-1-1024x197 1.png";
 
