@@ -1,9 +1,11 @@
 import React from "react";
-import * as motion from "motion/react-client"
+import * as motion from "motion/react-client";
 import { CiLocationOn } from "react-icons/ci";
 import { FaCaretRight } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
+import { TbDeviceLandlinePhone } from "react-icons/tb";
+
 
 const page = () => {
   const containerVariants = {
@@ -87,7 +89,7 @@ const page = () => {
               </motion.form>
             </motion.div>
             <motion.div
-              className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-10"
+              className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -142,6 +144,27 @@ const page = () => {
                   <FaCaretRight size={24} />
                   <p className="font-primary text-base text-[rgb(40,54,85)]">
                     info@binalimed.com
+                  </p>
+                </div>
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <TbDeviceLandlinePhone size={38} className="text-[rgb(0,125,223)]" />
+                <div className="flex items-center gap-2 text-[rgb(0,125,223)] mt-2">
+                  <FaCaretRight size={24} />
+                  <p className="font-primary text-base text-[rgb(40,54,85)]">
+                  +971- 2- 6760888
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 text-[rgb(0,125,223)] mt-2">
+                  <FaCaretRight size={24} />
+                  <p className="font-primary text-base text-[rgb(40,54,85)]">
+                  +971-4-4423503
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 text-[rgb(0,125,223)] mt-2">
+                  <FaCaretRight size={24} />
+                  <p className="font-primary text-base text-[rgb(40,54,85)]">
+                  +971- 3- 7824597
                   </p>
                 </div>
               </motion.div>
