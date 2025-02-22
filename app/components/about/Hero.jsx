@@ -20,10 +20,10 @@ const Hero = () => {
   };
 
   return (
-    <div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 flex justify-between items-center py-8 xl:gap-36 md:gap-20 flex-wrap md:flex-nowrap">
+    <div className="bg-[linear-gradient(173.07deg,rgba(227,242,255,0.78)_24.32%,hsla(0,0%,100%,0)_91.12%)]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 grid grid-cols-1 md:grid-cols-2 py-12 xl:gap-36 md:gap-20">
         <motion.div
-          className="border border-[rgb(7,135,253)] bg-white rounded-2xl p-4"
+          className="border border-[rgb(7,135,253)] bg-white rounded-2xl p-4 h-full"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -72,10 +72,11 @@ const Hero = () => {
           </motion.p>
         </motion.div>
         <motion.div
-          className="border border-[rgb(7,135,253)] bg-white rounded-2xl p-4 mt-5 md:mt-0 h-full"
+          className="border border-[rgb(7,135,253)] bg-white rounded-2xl p-4 h-full"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          style={{ height: '100%' }}
         >
           <motion.h2
             className="text-[rgb(0,125,223)] font-primary text-2xl"

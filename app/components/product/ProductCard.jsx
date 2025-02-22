@@ -140,7 +140,7 @@ const ProductCard = () => {
             <h3 className="text-base font-primary font-bold text-[rgb(3,37,76)]">
               {item.title}
             </h3>
-            <button className="mt-4 px-4 py-2 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 transition">
+            <button className="mt-4 px-4 py-2 bg-blue-500 text-white font-medium rounded-2xl hover:bg-blue-600 transition">
               Download Brochure
             </button>
           </div>
