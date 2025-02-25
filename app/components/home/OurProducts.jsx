@@ -105,6 +105,24 @@ const OurProducts = () => {
     }
   }, []);
 
+  // Split images into two rows
+  const firstRowImages = images.slice(0, 22);
+  const secondRowImages = images.slice(22);
+
+  // Duplicate images for continuous scrolling
+  const duplicatedFirstRow = [...firstRowImages, ...firstRowImages];
+  const duplicatedSecondRow = [...secondRowImages, ...secondRowImages];
+  
+  const imgWidth = 200; // Width of each image container
+  const firstRowWidth = duplicatedFirstRow.length * imgWidth;
+  const secondRowWidth = duplicatedSecondRow.length * imgWidth;
+  
+  // Adjust speeds for each row
+  const firstRowDuration = firstRowWidth / 50;
+  const secondRowDuration = secondRowWidth / 40; // Slightly different speed for visual interest
+
+
+
   const duplicatedImages = [...images, ...images];
   const totalImageWidth = duplicatedImages.length * 200; // Assuming each image is 200px wide
   const duration = totalImageWidth / 50; // Adjust the divisor to control the speed
@@ -116,19 +134,39 @@ const OurProducts = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 overflow-hidden">
           <hr />
           <div className="relative w-full overflow-hidden" ref={containerRef}>
-            <motion.div
+           {/* First Row */}
+           <motion.div
               className='flex items-center gap-6 mt-5'
-              animate={{ x: ['0%', '-100%'] }}
-              transition={{ repeat: Infinity, duration: duration, ease: 'linear' }}
-              style={{width: `${totalImageWidth}px`}}
+              animate={{ x: ['0%', '-50%'] }}
+              transition={{ repeat: Infinity, duration: firstRowDuration, ease: 'linear' }}
+              style={{width: `${firstRowWidth}px`}}
             >
-              {duplicatedImages.map((image, index) => (
+              {duplicatedFirstRow.map((image, index) => (
                 <Image 
-                  key={index} 
+                  key={`row1-${index}`} 
                   src={image.src} 
                   alt={image.alt} 
                   className='h-[100px] w-auto object-contain'
-                  width={200}
+                  width={imgWidth}
+                  height={100}
+                />
+              ))}
+            </motion.div>
+            
+            {/* Second Row - Moving in opposite direction */}
+            <motion.div
+              className='flex items-center gap-6 mt-8'
+              animate={{ x: ['-50%', '0%'] }}
+              transition={{ repeat: Infinity, duration: secondRowDuration, ease: 'linear' }}
+              style={{width: `${secondRowWidth}px`}}
+            >
+              {duplicatedSecondRow.map((image, index) => (
+                <Image 
+                  key={`row2-${index}`} 
+                  src={image.src} 
+                  alt={image.alt} 
+                  className='h-[100px] w-auto object-contain'
+                  width={imgWidth}
                   height={100}
                 />
               ))}
