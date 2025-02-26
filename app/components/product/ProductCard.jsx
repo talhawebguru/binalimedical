@@ -94,7 +94,7 @@ const products = [
   {
     image: sterilizationProducts,
     title: "STERILIZATION PRODUCTS",
-    link: "https://jurhy.com/",
+    link: "#",
   },
   {
     image: infectionControlProducts,
@@ -109,7 +109,7 @@ const products = [
   {
     image: lockdownMedical,
     title: "LOCKDOWN MEDICAL",
-    link: "https://jurhy.com/",
+    link: "#",
   },
 ];
 
