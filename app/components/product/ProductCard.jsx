@@ -24,76 +24,95 @@ const products = [
   {
     image: laboratoryConsumables,
     title: "LABORATORY CONSUMABLES",
+    link: "https://jurhy.com/category/labortaory/29/",
   },
   {
     image: medicalEquipments,
     title: "MEDICAL EQUIPMENTS",
+    link: "https://jurhy.com/category/medical-equipments/1/",
   },
   {
     image: woundCareProducts,
     title: "WOUND CARE PRODUCTS",
+    link: "https://jurhy.com/category/wound-care/55/",
   },
   {
     image: linenUniformsAndShoes,
     title: "LINEN, UNIFORMS AND SHOES",
+    link: "https://jurhy.com/category/orthopedic/40/cast-boot/1106/",
   },
   {
     image: emergencyAndFirstAid,
     title: "EMERGENCY AND FIRST AID",
+    link: "https://jurhy.com/category/emergency-and-first-aid/59/",
   },
   {
     image: orthopedicProducts,
     title: "ORTHOPEDIC PRODUCTS",
+    link: "https://jurhy.com/category/orthopedic/40/",
   },
   {
     image: radiologyProducts,
     title: "RADIOLOGY PRODUCTS",
+    link: "https://jurhy.com/category/radiology/45/",
   },
   {
     image: medicalFurnitures,
     title: "MEDICAL FURNITURES",
+    link: "https://jurhy.com/category/medical-equipments/1/furniture/4/",
   },
   {
     image: anesthesiaAndRespiratory,
     title: "ANESTHESIA AND RESPIRATORY",
+    link: "https://jurhy.com/category/respiratory/47/",
   },
   {
     image: dentalConsumables,
     title: "DENTAL CONSUMABLES",
+    link: "https://jurhy.com/category/dental/6/",
   },
   {
     image: surgicalProducts,
     title: "SURGICAL PRODUCTS",
+    link: "https://jurhy.com/category/surgery/49/",
   },
   {
     image: nursingConsumables,
     title: "NURSING CONSUMABLES",
+    link: "https://jurhy.com/category/nursing-material/57/nursing-consumables/1403/",
   },
   {
     image: incontinenceAndUrology,
     title: "IN CONTINENCE AND UROLOGY PRODUCTS",
+    link: "https://jurhy.com/category/urology/52/",
   },
   {
     image: surgicalAndDentalInstruments,
     title: "SURGICAL & DENTAL INSTRUMENTS",
+    link: "https://jurhy.com/category/dental/6/dental-instruments/1388/",
   },
   {
     image: sterilizationProducts,
     title: "STERILIZATION PRODUCTS",
+    link: "https://jurhy.com/",
   },
   {
     image: infectionControlProducts,
     title: "INFECTION CONTROL PRODUCTS",
+    link: "https://jurhy.com/category/hygiene-and-disinfections/26/",
   },
   {
     image: kaweProducts,
     title: "KAWE PRODUCTS",
+    link: "https://jurhy.com/brandlist.php",
   },
   {
     image: lockdownMedical,
     title: "LOCKDOWN MEDICAL",
+    link: "https://jurhy.com/",
   },
 ];
+
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -138,7 +157,7 @@ const ProductCard = () => {
           </div>
           <div className="p-4 text-center">
             <h3 className="text-base font-primary font-bold text-[rgb(3,37,76)]">
-              {item.title}
+             <a href={item.link} target="_blank">{item.title}</a>
             </h3>
             <button className="mt-4 px-4 py-2 bg-blue-500 text-white font-medium rounded-2xl hover:bg-blue-600 transition">
               Download Brochure
