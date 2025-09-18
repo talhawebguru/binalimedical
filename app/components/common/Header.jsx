@@ -75,6 +75,11 @@ const Header = () => {
                     Our Products
                   </li>
                 </Link>
+                <Link href={"/partners"}>
+                  <li className="cursor-pointer hover:text-primary transition">
+                    Our Partners
+                  </li>
+                </Link>
                 <Link href={"/customers"}>
                   <li className="cursor-pointer hover:text-primary transition">
                     Customers
@@ -161,6 +166,11 @@ const Header = () => {
                    <Link href={"/products"} onClick={() => setIsMobileMenuOpen(false)}>
                      <li className="cursor-pointer hover:text-primary transition">
                        Our Products
+                     </li>
+                   </Link>
+                   <Link href={"/partners"} onClick={() => setIsMobileMenuOpen(false)}>
+                     <li className="cursor-pointer hover:text-primary transition">
+                       Partners
                      </li>
                    </Link>
                    <Link href={"/customers"} onClick={() => setIsMobileMenuOpen(false)}>
