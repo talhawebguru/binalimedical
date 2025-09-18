@@ -1,39 +1,16 @@
 import React from "react";
-import * as motion from "motion/react-client"
 import { IconBrandFacebook, IconBrandLinkedin, IconBrandWhatsapp } from "@tabler/icons-react";
 import Container from "./Container";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
     <>
       <section className="bg-primary">
         <Container>
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-12 pb-10"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-          >
-            <motion.div className="flex flex-col gap-2" variants={itemVariants}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-12 pb-10">
+            <div className="flex flex-col gap-2">
               <h2 className="text-white font-primary font-bold text-2xl leading-7">
                 Bin Ali
               </h2>
@@ -43,8 +20,8 @@ const Footer = () => {
                 grown to be a leading supplier of a wide range of excellent
                 products.
               </p>
-            </motion.div>
-            <motion.div className="sm:place-items-center" variants={itemVariants}>
+            </div>
+            <div className="sm:place-items-center">
               <div className="flex flex-col gap-2 ">
                 <h2 className="text-white font-primary font-bold text-2xl leading-7 ">
                   MOH
@@ -54,8 +31,8 @@ const Footer = () => {
                   27/10/2024 TO 27/10/2025
                 </p>
               </div>
-            </motion.div>
-            <motion.div className="lg:place-items-center" variants={itemVariants}>
+            </div>
+            <div className="lg:place-items-center">
               <div className="flex flex-col gap-2">
                 <h2 className="text-white font-primary font-bold text-2xl leading-7">
                   BRANCH OFFICES
@@ -66,8 +43,8 @@ const Footer = () => {
                   <br /> AbuDhabi - +971-3-7824596
                 </p>
               </div>
-            </motion.div>
-            <motion.div className="sm:place-items-center" variants={itemVariants}>
+            </div>
+            <div className="sm:place-items-center">
               <div className="flex flex-col gap-2 ">
                 <h2 className="text-white font-primary font-bold text-2xl leading-7">
                   KEEP IN TOUCH
@@ -78,21 +55,16 @@ const Footer = () => {
                   <IconBrandWhatsapp size={32} />
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </Container>
       </section>
       <section className="bg-secondary py-2.5">
         <Container>
-          <motion.p
-            className="font-primary font-normal text-base leading-6 text-white"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
+          <p className="font-primary font-normal text-base leading-6 text-white">
             © {currentYear} Binali Medical Supplies | All Rights Reserved |
             Terms of Services | Privacy
-          </motion.p>
+          </p>
         </Container>
       </section>
     </>

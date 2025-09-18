@@ -22,10 +22,10 @@ const BioMedical = () => {
   };
 
   return (
-    <section className="bg-[url('/images/bio-bg.jpg')] bg-cover bg-center bg-no-repeat">
-      <Container className="pb-14">
+    <section className="bg-[url('/images/bio-bg.jpg')] bg-cover bg-center bg-no-repeat py-14">
+      <Container>
           <motion.h2
-            className="text-white font-primary text-2xl font-medium text-center pt-14"
+            className="text-white font-primary text-2xl font-medium text-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}

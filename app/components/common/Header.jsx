@@ -13,10 +13,6 @@ const Header = () => {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
-  const headerVariants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
   const menuVariants = {
     hidden: { x: "100%", opacity: 0 },
     visible: {
@@ -37,11 +33,7 @@ const Header = () => {
         isHomePage ? "absolute" : "relative"
       }`}
     >
-      <motion.div
-        variants={headerVariants}
-        initial="hidden"
-        animate="visible"
-      >
+      <div>
         <Container className="py-1">
         <div className="flex items-center justify-between py-3">
           <Link href={"/"}>
@@ -122,7 +114,7 @@ const Header = () => {
           </button>
         </div>
         </Container>
-      </motion.div>
+      </div>
 
       <AnimatePresence>
         {isMobileMenuOpen && (
