@@ -122,6 +122,33 @@ const OurPartners = () => {
   const firstRowDuration = firstRowWidth / 50;
   const secondRowDuration = secondRowWidth / 40; // Slightly different speed for visual interest
 
+  // Animation variants for smooth motion
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        staggerChildren: 0.15,
+        delayChildren: 0.3
+      }
+    }
+  }
+
+  const rowVariants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
+  }
+
 
 
   const duplicatedImages = [...images, ...images];
@@ -131,16 +158,40 @@ const OurPartners = () => {
   return (
     <section>
       <Container>
-        <h2 className='font-primary text-3xl text-[rgb(40,54,85)] text-center font-medium leading-8 py-4'>Our Partners</h2>
-        <div className='pb-20'>
+        <motion.h2 
+          className='font-primary text-3xl text-[rgb(40,54,85)] text-center font-medium leading-8 py-4'
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ 
+            duration: 0.8, 
+            ease: [0.25, 0.46, 0.45, 0.94],
+            delay: 0.2
+          }}
+        >
+          Our Partners
+        </motion.h2>
+        
+        <motion.div 
+          className='pb-20'
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="overflow-hidden">
             <hr />
             <div className="relative w-full overflow-hidden" ref={containerRef}>
            {/* First Row */}
            <motion.div
               className='flex items-center gap-6 mt-5'
+              variants={rowVariants}
               animate={{ x: ['0%', '-50%'] }}
-              transition={{ repeat: Infinity, duration: firstRowDuration, ease: 'linear' }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: firstRowDuration, 
+                ease: 'linear'
+              }}
               style={{width: `${firstRowWidth}px`}}
             >
               {duplicatedFirstRow.map((image, index) => (
@@ -158,8 +209,13 @@ const OurPartners = () => {
             {/* Second Row - Moving in opposite direction */}
             <motion.div
               className='flex items-center gap-6 mt-8'
+              variants={rowVariants}
               animate={{ x: ['-50%', '0%'] }}
-              transition={{ repeat: Infinity, duration: secondRowDuration, ease: 'linear' }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: secondRowDuration, 
+                ease: 'linear'
+              }}
               style={{width: `${secondRowWidth}px`}}
             >
               {duplicatedSecondRow.map((image, index) => (
@@ -174,8 +230,8 @@ const OurPartners = () => {
               ))}
             </motion.div>
           </div>
-        </div>
-        </div>
+          </div>
+        </motion.div>
       </Container>
     </section>
   )

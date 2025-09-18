@@ -5,43 +5,110 @@ import Container from "../common/Container";
 
 const About = () => {
   const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
-        duration: 1,
-        delay: 1.5,
+        duration: 0.6,
         staggerChildren: 0.2,
+        ease: "easeOut"
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { 
+      opacity: 0, 
+      y: 40,
+      scale: 0.95
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    },
+  };
+
+  const titleVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 30
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { 
+      opacity: 0, 
+      scale: 0.9,
+      y: 20
+    },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "backOut"
+      }
+    },
+    hover: {
+      scale: 1.05,
+      x: 10,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
+      }
+    },
+    tap: {
+      scale: 0.95
+    }
   };
 
   return (
     <section>
       <Container>
-        <div className="pt-20 pb-32">
+        <motion.div 
+          className="pt-20 pb-32"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <motion.h2
             className="text-[rgb(17,22,56)] text-4xl font-normal font-tertiary"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            variants={titleVariants}
           >
             Welcome to <br />
-            <span className="text-primary">Bin Ali Medical Supplies LLC</span>
-          </motion.h2>
-          <hr className="my-4" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 mt-10">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
+            <motion.span 
+              className="text-primary"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5, ease: "backOut" }}
             >
+              Bin Ali Medical Supplies LLC
+            </motion.span>
+          </motion.h2>
+          
+          <motion.hr 
+            className="my-4"
+            variants={itemVariants}
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 mt-10">
+            <motion.div variants={itemVariants}>
               <p className="text-[rgb(17,22,56)] text-base leading-7 font-normal font-quaternary">
                 Being the leading supplier of healthcare products in the region,
                 Bin Ali Medical Supplies LLC deals with an extensive range of
@@ -58,9 +125,7 @@ const About = () => {
             </motion.div>
             <motion.div
               className=""
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
+              variants={itemVariants}
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {[
@@ -91,7 +156,7 @@ const About = () => {
               </div>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
