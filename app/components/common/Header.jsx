@@ -6,6 +6,7 @@ import Link from "next/link";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 import { usePathname } from "next/navigation";
+import Container from "./Container";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,15 +32,17 @@ const Header = () => {
   };
 
   return (
-    <motion.div
+    <section
       className={`border-b border-primary top-0 left-0 w-full z-20 ${
         isHomePage ? "absolute" : "relative"
       }`}
-      variants={headerVariants}
-      initial="hidden"
-      animate="visible"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-1">
+      <motion.div
+        variants={headerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <Container className="py-1">
         <div className="flex items-center justify-between py-3">
           <Link href={"/"}>
             <Image
@@ -92,6 +95,8 @@ const Header = () => {
             <Link
               href="http://binalimain.qnoddns.org.cn:9090/BAMS/CustomerLogin"
               target="_blank"
+              aria-label="Web Store"
+              className="cursor-pointer"
             >
               <button aria-label="Web Store" className="bg-primary text-white py-2 px-4 rounded-full hover:bg-opacity-80 transition">
                 Web Store
@@ -111,7 +116,8 @@ const Header = () => {
             />
           </button>
         </div>
-      </div>
+        </Container>
+      </motion.div>
 
       <AnimatePresence>
         {isMobileMenuOpen && (
@@ -185,7 +191,7 @@ const Header = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </section>
   );
 };
 

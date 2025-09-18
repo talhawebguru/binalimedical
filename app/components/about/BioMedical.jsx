@@ -1,6 +1,7 @@
 import React from "react";
 import * as motion from "motion/react-client"
 import { IconArrowRight } from "@tabler/icons-react";
+import Container from "../common/Container";
 
 const BioMedical = () => {
   const containerVariants = {
@@ -21,9 +22,8 @@ const BioMedical = () => {
   };
 
   return (
-    <>
-      <div className="bg-[url('/images/bio-bg.jpg')] bg-cover bg-center bg-no-repeat">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 pb-14">
+    <section className="bg-[url('/images/bio-bg.jpg')] bg-cover bg-center bg-no-repeat">
+      <Container className="pb-14">
           <motion.h2
             className="text-white font-primary text-2xl font-medium text-center pt-14"
             initial={{ opacity: 0, y: 50 }}
@@ -78,9 +78,8 @@ const BioMedical = () => {
               ))}
             </motion.div>
           </div>
-        </div>
-      </div>
-    </>
+      </Container>
+    </section>
   );
 };
 

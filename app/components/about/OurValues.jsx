@@ -1,5 +1,6 @@
 import React from "react";
 import * as motion from "motion/react-client"
+import Container from "../common/Container";
 
 const OurValues = () => {
   const containerVariants = {
@@ -20,17 +21,18 @@ const OurValues = () => {
   };
 
   return (
-    <>
-      <motion.h2
-        className="text-center text-[rgb(31,43,118)] font-primary text-2xl font-medium my-12 lg:my-20"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 1 }}
-      >
-        OUR VALUES & PRINCIPLES
-      </motion.h2>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-1 mb-20">
+    <section>
+      <Container>
+        <motion.h2
+          className="text-center text-[rgb(31,43,118)] font-primary text-2xl font-medium my-12 lg:my-20"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1 }}
+        >
+          OUR VALUES & PRINCIPLES
+        </motion.h2>
+        <div className="py-1 mb-20">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:grid-cols-2 sm:gap-10"
           variants={containerVariants}
@@ -104,8 +106,9 @@ const OurValues = () => {
             </p>
           </motion.div>
         </motion.div>
-      </div>
-    </>
+        </div>
+      </Container>
+    </section>
   );
 };
 

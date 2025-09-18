@@ -131,7 +131,7 @@ const OurPartners = () => {
   return (
     <section>
       <Container>
-        <h2 className='font-primary text-3xl text-[rgb(40,54,85)] text-center font-medium leading-8 py-4'>Our Products</h2>
+        <h2 className='font-primary text-3xl text-[rgb(40,54,85)] text-center font-medium leading-8 py-4'>Our Partners</h2>
         <div className='pb-20'>
           <div className="overflow-hidden">
             <hr />

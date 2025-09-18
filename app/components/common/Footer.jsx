@@ -1,6 +1,7 @@
 import React from "react";
 import * as motion from "motion/react-client"
 import { IconBrandFacebook, IconBrandLinkedin, IconBrandWhatsapp } from "@tabler/icons-react";
+import Container from "./Container";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,8 +25,8 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-primary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+      <section className="bg-primary">
+        <Container>
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-12 pb-10"
             variants={containerVariants}
@@ -79,21 +80,21 @@ const Footer = () => {
               </div>
             </motion.div>
           </motion.div>
-        </div>
-        <div className="bg-secondary py-2.5">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
-            <motion.p
-              className="font-primary font-normal text-base leading-6 text-white"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            >
-              © {currentYear} Binali Medical Supplies | All Rights Reserved |
-              Terms of Services | Privacy
-            </motion.p>
-          </div>
-        </div>
-      </footer>
+        </Container>
+      </section>
+      <section className="bg-secondary py-2.5">
+        <Container>
+          <motion.p
+            className="font-primary font-normal text-base leading-6 text-white"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            © {currentYear} Binali Medical Supplies | All Rights Reserved |
+            Terms of Services | Privacy
+          </motion.p>
+        </Container>
+      </section>
     </>
   );
 };

@@ -3,6 +3,7 @@ import * as motion from "motion/react-client"
 import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
 import HeroBg from "@/public/images/sales.jpg";
+import Container from "../common/Container";
 
 const OurMarketeting = () => {
 
@@ -24,18 +25,17 @@ const OurMarketeting = () => {
   };
 
   return (
-    <>
-      <div className="bg-[rgba(7,135,253,0.11)] py-10">
-        <motion.h2
-          className="text-center text-[rgb(40,54,85)] font-primary text-2xl font-medium py-8 lg:py-10"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1 }}
-        >
-          OUR MARKETING & SALES TEAM
-        </motion.h2>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+    <section className="bg-[rgba(7,135,253,0.11)] py-10">
+      <motion.h2
+        className="text-center text-[rgb(40,54,85)] font-primary text-2xl font-medium py-8 lg:py-10"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1 }}
+      >
+        OUR MARKETING & SALES TEAM
+      </motion.h2>
+      <Container>
           <motion.div
             className="grid grid-cols-1 lg:grid-cols-2 gap-4 s sm:gap-10"
             variants={containerVariants}
@@ -123,9 +123,8 @@ const OurMarketeting = () => {
               <Image src={HeroBg} alt="sales team image" />
             </motion.div>
           </motion.div>
-        </div>
-      </div>
-    </>
+      </Container>
+    </section>
   );
 };
 
