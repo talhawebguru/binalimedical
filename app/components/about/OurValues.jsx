@@ -1,34 +1,57 @@
+"use client"
 import React from "react";
-import * as motion from "motion/react-client"
+import { motion } from "motion/react";
 import Container from "../common/Container";
 
 const OurValues = () => {
   const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  }
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
-        duration: 1,
-        staggerChildren: 0.3,
-      },
-    },
-  };
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
+  }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  };
+    hidden: { opacity: 0, y: 40, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
+  }
 
   return (
     <section>
       <Container>
         <motion.h2
           className="text-center text-[rgb(31,43,118)] font-primary text-2xl font-medium my-12 lg:my-20"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1 }}
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
         >
           OUR VALUES & PRINCIPLES
         </motion.h2>
