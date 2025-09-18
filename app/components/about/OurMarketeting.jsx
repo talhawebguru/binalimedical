@@ -1,8 +1,8 @@
 import React from "react";
 import * as motion from "motion/react-client"
-import { FaArrowRightLong } from "react-icons/fa6";
+import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
-import HeroBg from "/public/images/sales.jpg";
+import HeroBg from "@/public/images/sales.jpg";
 
 const OurMarketeting = () => {
 
@@ -55,7 +55,7 @@ const OurMarketeting = () => {
               <div>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="bg-primary flex items-center justify-center w-6 h-6 rounded-full">
-                    <FaArrowRightLong className="text-white" />
+                    <IconArrowRight className="text-white" />
                   </div>
                   <p className="font-primary text-base text-[rgb(17,22,66)] font-normal">
                     Installation of Equipment & Filing of documents.
@@ -63,7 +63,7 @@ const OurMarketeting = () => {
                 </div>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="bg-primary flex items-center justify-center w-6 h-6 rounded-full">
-                    <FaArrowRightLong className="text-white" />
+                    <IconArrowRight className="text-white" />
                   </div>
                   <p className="font-primary text-base text-[rgb(17,22,66)] font-normal">
                     Equipment inventory Register (both soft copy & hard copy)
@@ -71,7 +71,7 @@ const OurMarketeting = () => {
                 </div>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="bg-primary flex items-center justify-center w-6 h-6 rounded-full">
-                    <FaArrowRightLong className="text-white" />
+                    <IconArrowRight className="text-white" />
                   </div>
                   <p className="font-primary text-base text-[rgb(17,22,66)] font-normal">
                     Electrical Safety Analyzer Testing
@@ -79,7 +79,7 @@ const OurMarketeting = () => {
                 </div>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="bg-primary flex items-center justify-center w-6 h-6 rounded-full">
-                    <FaArrowRightLong className="text-white" />
+                    <IconArrowRight className="text-white" />
                   </div>
                   <p className="font-primary text-base text-[rgb(17,22,66)] font-normal">
                     Vital Sign Simulation & Calibration Breakdown Service.
@@ -87,7 +87,7 @@ const OurMarketeting = () => {
                 </div>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="bg-primary flex items-center justify-center w-6 h-6 rounded-full">
-                    <FaArrowRightLong className="text-white" />
+                    <IconArrowRight className="text-white" />
                   </div>
                   <p className="font-primary text-base text-[rgb(17,22,66)] font-normal">
                     Daily Checking of critical Equipment & its document filing.
@@ -95,7 +95,7 @@ const OurMarketeting = () => {
                 </div>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="bg-primary flex items-center justify-center w-6 h-6 rounded-full">
-                    <FaArrowRightLong className="text-white" />
+                    <IconArrowRight className="text-white" />
                   </div>
                   <p className="font-primary text-base text-[rgb(17,22,66)] font-normal">
                     Maintenance Contracts follow up. (AMC & CMC)
@@ -103,7 +103,7 @@ const OurMarketeting = () => {
                 </div>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="bg-primary flex items-center justify-center w-6 h-6 rounded-full">
-                    <FaArrowRightLong className="text-white" />
+                    <IconArrowRight className="text-white" />
                   </div>
                   <p className="font-primary text-base text-[rgb(17,22,66)] font-normal">
                     PM Scheduling.
@@ -111,7 +111,7 @@ const OurMarketeting = () => {
                 </div>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="bg-primary flex items-center justify-center w-6 h-6 rounded-full">
-                    <FaArrowRightLong className="text-white" />
+                    <IconArrowRight className="text-white" />
                   </div>
                   <p className="font-primary text-base text-[rgb(17,22,66)] font-normal">
                     PM to be performed as per the standard procedure

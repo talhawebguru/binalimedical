@@ -1,8 +1,6 @@
 import React from "react";
 import * as motion from "motion/react-client"
-import { FaFacebook } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
-import { RiWhatsappFill } from "react-icons/ri";
+import { IconBrandFacebook, IconBrandLinkedin, IconBrandWhatsapp } from "@tabler/icons-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -74,9 +72,9 @@ const Footer = () => {
                   KEEP IN TOUCH
                 </h2>
                 <div className="text-white flex gap-4 items-center">
-                  <FaFacebook size={32}  />
-                  <FaLinkedin size={32} />
-                  <RiWhatsappFill size={32} />
+                  <IconBrandFacebook size={32}  />
+                  <IconBrandLinkedin size={32} />
+                  <IconBrandWhatsapp size={32} />
                 </div>
               </div>
             </motion.div>

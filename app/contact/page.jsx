@@ -1,10 +1,6 @@
 import React from "react";
 import * as motion from "motion/react-client";
-import { CiLocationOn } from "react-icons/ci";
-import { FaCaretRight } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
-import { FaPhone } from "react-icons/fa";
-import { TbDeviceLandlinePhone } from "react-icons/tb";
+import { IconMapPin, IconChevronRight, IconMail, IconPhone, IconPhone as IconDeviceLandlinePhone } from "@tabler/icons-react";
 
 
 const page = () => {
@@ -96,73 +92,73 @@ const page = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <motion.div variants={itemVariants}>
-                <CiLocationOn size={38} className="text-[rgb(0,125,223)]" />
+                <IconMapPin size={38} className="text-[rgb(0,125,223)]" />
                 <div className="flex items-center gap-2 text-[rgb(0,125,223)] mt-2">
-                  <FaCaretRight size={24} className="w-8" />
+                  <IconChevronRight size={24} className="w-8" />
                   <p className="font-primary text-base text-[rgb(40,54,85)]">
                     OFFICE - 601, MAZYAD MALL TOWER1, MUHAMMED BIN ZAYED CITY,
                     MUSAFFAH, ABU DHABI
                   </p>
                 </div>
                 <div className="flex items-center gap-2 text-[rgb(0,125,223)] mt-2">
-                  <FaCaretRight size={24} />
+                  <IconChevronRight size={24} />
                   <p className="font-primary text-base text-[rgb(40,54,85)]">
                     SUITE NO 806, SHOBA IVORY 1 BUSINESS BAY, Dubai
                   </p>
                 </div>
                 <div className="flex items-center gap-2 text-[rgb(0,125,223)] mt-2">
-                  <FaCaretRight size={24} />
+                  <IconChevronRight size={24} />
                   <p className="font-primary text-base text-[rgb(40,54,85)]">
                     AL-HARAIR STREET NO-57 SHARIKAT, AL-AIN
                   </p>
                 </div>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <FaPhone size={38} className="text-[rgb(0,125,223)]" />
+                <IconPhone size={38} className="text-[rgb(0,125,223)]" />
                 <div className="flex items-center gap-2 text-[rgb(0,125,223)] mt-2">
-                  <FaCaretRight size={24} />
+                  <IconChevronRight size={24} />
                   <p className="font-primary text-base text-[rgb(40,54,85)]">
                     Abu Dhabi +971- 2- 6760555
                   </p>
                 </div>
                 <div className="flex items-center gap-2 text-[rgb(0,125,223)] mt-2">
-                  <FaCaretRight size={24} />
+                  <IconChevronRight size={24} />
                   <p className="font-primary text-base text-[rgb(40,54,85)]">
                     Dubai +971 -4- 452002
                   </p>
                 </div>
                 <div className="flex items-center gap-2 text-[rgb(0,125,223)] mt-2">
-                  <FaCaretRight size={24} />
+                  <IconChevronRight size={24} />
                   <p className="font-primary text-base text-[rgb(40,54,85)]">
                     Alain +971- 3- 7824596
                   </p>
                 </div>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <MdEmail size={38} className="text-[rgb(0,125,223)]" />
+                <IconMail size={38} className="text-[rgb(0,125,223)]" />
                 <div className="flex items-center gap-2 text-[rgb(0,125,223)] mt-2">
-                  <FaCaretRight size={24} />
+                  <IconChevronRight size={24} />
                   <p className="font-primary text-base text-[rgb(40,54,85)]">
                     info@binalimed.com
                   </p>
                 </div>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <TbDeviceLandlinePhone size={38} className="text-[rgb(0,125,223)]" />
+                <IconDeviceLandlinePhone size={38} className="text-[rgb(0,125,223)]" />
                 <div className="flex items-center gap-2 text-[rgb(0,125,223)] mt-2">
-                  <FaCaretRight size={24} />
+                  <IconChevronRight size={24} />
                   <p className="font-primary text-base text-[rgb(40,54,85)]">
                   +971- 2- 6760888
                   </p>
                 </div>
                 <div className="flex items-center gap-2 text-[rgb(0,125,223)] mt-2">
-                  <FaCaretRight size={24} />
+                  <IconChevronRight size={24} />
                   <p className="font-primary text-base text-[rgb(40,54,85)]">
                   +971-4-4423503
                   </p>
                 </div>
                 <div className="flex items-center gap-2 text-[rgb(0,125,223)] mt-2">
-                  <FaCaretRight size={24} />
+                  <IconChevronRight size={24} />
                   <p className="font-primary text-base text-[rgb(40,54,85)]">
                   +971- 3- 7824597
                   </p>

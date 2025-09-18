@@ -1,6 +1,6 @@
 import React from "react";
 import * as motion from "motion/react-client"
-import { FaArrowRightLong } from "react-icons/fa6";
+import { IconArrowRight } from "@tabler/icons-react";
 
 
 const About = () => {
@@ -81,7 +81,7 @@ const About = () => {
                     variants={itemVariants}
                   >
                     <div className="bg-primary flex items-center justify-center w-6 h-5 rounded-full">
-                      <FaArrowRightLong className="text-white" />
+                      <IconArrowRight className="text-white" />
                     </div>
                     <p className="font-quaternary text-base text-[rgb(17,22,56)] font-normal">
                       {item}

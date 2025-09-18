@@ -3,9 +3,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Logo from "@/public/images/logo.svg";
 import Link from "next/link";
-import { MdMenu } from "react-icons/md";
-import { IoMdClose } from "react-icons/io";
-import { motion, AnimatePresence } from "framer-motion";
+import { IconMenu2, IconX } from "@tabler/icons-react";
+import { motion, AnimatePresence } from "motion/react";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
@@ -105,7 +104,7 @@ const Header = () => {
             aria-label="Open Menu"
             onClick={() => setIsMobileMenuOpen(true)}
           >
-            <MdMenu
+            <IconMenu2
               className={`h-7 w-7 ${
                 isHomePage ? "text-white" : "text-gray-900"
               }`}
@@ -138,7 +137,7 @@ const Header = () => {
               aria-label="Close Menu"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <IoMdClose className="h-6 w-6" />
+              <IconX className="h-6 w-6" />
             </button>
 
             <nav className="mt-10">

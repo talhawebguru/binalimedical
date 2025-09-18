@@ -1,6 +1,6 @@
 import React from "react";
 import * as motion from "motion/react-client"
-import { FaArrowRightLong } from "react-icons/fa6";
+import { IconArrowRight } from "@tabler/icons-react";
 
 const BioMedical = () => {
   const containerVariants = {
@@ -69,7 +69,7 @@ const BioMedical = () => {
               ].map((item, index) => (
                 <motion.div className="flex items-center gap-3" key={index} variants={itemVariants}>
                   <div className="bg-primary flex items-center justify-center w-6 h-5 rounded-full">
-                    <FaArrowRightLong className="text-white" />
+                    <IconArrowRight className="text-white" />
                   </div>
                   <p className="font-primary text-base text-white font-normal">
                     {item}
