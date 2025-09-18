@@ -1,7 +1,7 @@
 import React from "react";
-import * as motion from "motion/react-client"
+import * as motion from "motion/react-client";
 import { IconArrowRight } from "@tabler/icons-react";
-
+import Container from "../common/Container";
 
 const About = () => {
   const containerVariants = {
@@ -23,8 +23,8 @@ const About = () => {
   };
 
   return (
-    <div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+    <section>
+      <Container>
         <div className="pt-20 pb-32">
           <motion.h2
             className="text-[rgb(17,22,56)] text-4xl font-normal font-tertiary"
@@ -92,8 +92,8 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-      </div>
-    </div>
+      </Container>
+    </section>
   );
 };
 

@@ -1,58 +1,15 @@
 @import "tailwindcss";
 
-/* Tailwind v4 Custom Configuration using CSS Custom Properties */
-:root {
+@theme {
   /* Custom Colors */
   --color-primary: #007ddf;
   --color-secondary: #1f2b76;
   
-  /* Font Families */
-  --font-family-primary: var(--font-roboto-condensed), sans-serif;
-  --font-family-secondary: var(--font-montserrat), sans-serif;
-  --font-family-tertiary: var(--font-anton), sans-serif;
-  --font-family-quaternary: var(--font-nunito), sans-serif;
-}
-
-/* Custom Utility Classes for Fonts */
-.font-primary {
-  font-family: var(--font-family-primary);
-}
-
-.font-secondary {
-  font-family: var(--font-family-secondary);
-}
-
-.font-tertiary {
-  font-family: var(--font-family-tertiary);
-}
-
-.font-quaternary {
-  font-family: var(--font-family-quaternary);
-}
-
-/* Custom Color Classes */
-.text-primary {
-  color: var(--color-primary);
-}
-
-.text-secondary {
-  color: var(--color-secondary);
-}
-
-.bg-primary {
-  background-color: var(--color-primary);
-}
-
-.bg-secondary {
-  background-color: var(--color-secondary);
-}
-
-.border-primary {
-  border-color: var(--color-primary);
-}
-
-.border-secondary {
-  border-color: var(--color-secondary);
+  /* Custom Font Families */
+  --font-primary: var(--font-roboto-condensed), sans-serif;
+  --font-secondary: var(--font-montserrat), sans-serif;
+  --font-tertiary: var(--font-anton), sans-serif;
+  --font-quaternary: var(--font-nunito), sans-serif;
 }
 
 /* Global Styles */

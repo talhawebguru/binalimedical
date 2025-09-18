@@ -2,6 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from "motion/react"
+import Container from "../common/Container";
 import Logo1 from "@/public/images/binalilogo/dr.reddy.png";
 import Logo2 from "@/public/images/binalilogo/descarga-3-1024x207-1.png";
 import Logo3 from "@/public/images/binalilogo/Group1171275306.png";
@@ -95,7 +96,7 @@ const images = [
   { src: Logo44, alt: "Rendition" }
 ];
 
-const OurProducts = () => {
+const OurPartners = () => {
   const containerRef = React.useRef(null);
   const [containerWidth, setContainerWidth] = React.useState(0);
 
@@ -128,12 +129,13 @@ const OurProducts = () => {
   const duration = totalImageWidth / 50; // Adjust the divisor to control the speed
 
   return (
-    <>
-      <h2 className='font-primary text-3xl text-[rgb(40,54,85)] text-center font-medium leading-8 py-4'>Our Products</h2>
-      <div className='pb-20'>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 overflow-hidden">
-          <hr />
-          <div className="relative w-full overflow-hidden" ref={containerRef}>
+    <section>
+      <Container>
+        <h2 className='font-primary text-3xl text-[rgb(40,54,85)] text-center font-medium leading-8 py-4'>Our Products</h2>
+        <div className='pb-20'>
+          <div className="overflow-hidden">
+            <hr />
+            <div className="relative w-full overflow-hidden" ref={containerRef}>
            {/* First Row */}
            <motion.div
               className='flex items-center gap-6 mt-5'
@@ -173,9 +175,10 @@ const OurProducts = () => {
             </motion.div>
           </div>
         </div>
-      </div>
-    </>
+        </div>
+      </Container>
+    </section>
   )
 }
 
-export default OurProducts
+export default OurPartners

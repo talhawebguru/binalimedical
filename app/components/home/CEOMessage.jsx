@@ -1,10 +1,11 @@
 import React from "react";
-import * as motion from "motion/react-client"
+import * as motion from "motion/react-client";
+import Container from "../common/Container";
 
 const CEOMessage = () => {
   return (
-    <div className="bg-[url(/images/bg-ceo.png)] bg-cover bg-center bg-no-repeat py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+    <section className="bg-[url(/images/bg-ceo.png)] bg-cover bg-center bg-no-repeat py-20">
+      <Container>
         <motion.h2
           className="font-quaternary text-3xl font-medium text-white"
           initial={{ opacity: 0, y: 50 }}
@@ -44,8 +45,8 @@ const CEOMessage = () => {
           <span className="text-3xl">OMAR ALI</span> <br />
           Bin Ali Medical Supplies LLC
         </motion.p>
-      </div>
-    </div>
+      </Container>
+    </section>
   );
 };
 

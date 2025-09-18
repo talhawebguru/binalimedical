@@ -1,11 +1,12 @@
 import React from "react";
-import * as motion from "motion/react-client"
+import * as motion from "motion/react-client";
+import Container from "../common/Container";
 
 const Hero = () => {
   return (
-    <div className="top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)]">
+    <section className="top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)]">
       <div className="h-screen bg-[url('/images/hero-bg.jpg')] bg-cover flex items-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+        <Container>
           <motion.h1
             className="font-secondary text-3xl sm:text-5xl font-semibold text-white w-[85%]  md:w-[650px] md:leading-[60px]"
             initial={{ opacity: 0, y: 50 }}
@@ -33,9 +34,9 @@ const Hero = () => {
           >
             Read More
           </motion.button>
-        </div>
+        </Container>
       </div>
-    </div>
+    </section>
   );
 };
 
