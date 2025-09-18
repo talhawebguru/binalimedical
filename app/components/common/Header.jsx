@@ -95,7 +95,7 @@ const Header = () => {
               aria-label="Web Store"
               className="cursor-pointer"
             >
-              <button aria-label="Web Store" className="bg-primary text-white py-2 px-4 rounded-full hover:bg-opacity-80 transition">
+              <button aria-label="Web Store" className="bg-primary cursor-pointer text-white py-2 px-4 rounded-full hover:bg-opacity-80 transition">
                 Web Store
               </button>
             </Link>
