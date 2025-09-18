@@ -1,13 +1,9 @@
+"use client"
 import React from "react";
 import Container from "../components/common/Container";
 import PartnerCard from "../components/partners/PartnerCard";
-import * as motion from "motion/react-client";
+import { motion } from "motion/react";
 
-export const metadata = {
-  title: "Our Partners | Bin Ali Medical Supplies",
-  description: "Discover our trusted network of healthcare partners worldwide. We collaborate with leading medical companies to deliver excellence in medical supplies and innovative healthcare solutions.",
-  keywords: "medical partners, healthcare partnerships, medical suppliers, binali partners, medical equipment partners"
-};
 
 // Import all partner logos (same as OurPartners component)
 import Logo1 from "@/public/images/binalilogo/dr.reddy.png";
@@ -108,18 +104,24 @@ const PartnersPage = () => {
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.6,
-        staggerChildren: 0.1
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        staggerChildren: 0.08,
+        delayChildren: 0.2
       }
     }
   };
 
   const titleVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8 }
+      scale: 1,
+      transition: { 
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
     }
   };
 
@@ -128,7 +130,37 @@ const PartnersPage = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, delay: 0.2 }
+      transition: { 
+        duration: 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        delay: 0.2
+      }
+    }
+  };
+
+  const gridVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        staggerChildren: 0.05,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const ctaVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
     }
   };
 
@@ -138,7 +170,8 @@ const PartnersPage = () => {
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16"
         >
           <motion.h1
@@ -158,10 +191,10 @@ const PartnersPage = () => {
         </motion.div>
 
         <motion.div
-          variants={containerVariants}
+          variants={gridVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
           {partners.map((partner, index) => (
@@ -174,21 +207,44 @@ const PartnersPage = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          variants={ctaVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
           className="text-center mt-16 bg-[rgb(0,125,223)] rounded-2xl p-8 text-white"
         >
-          <h3 className="text-2xl font-primary font-bold mb-4">
+          <motion.h3 
+            className="text-2xl font-primary font-bold mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
+          >
             Interested in Partnership?
-          </h3>
-          <p className="text-lg mb-6 opacity-90">
+          </motion.h3>
+          <motion.p 
+            className="text-lg mb-6 opacity-90"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.4 }}
+          >
             Join our network of trusted partners and help us deliver exceptional healthcare solutions.
-          </p>
-          <button className="bg-white text-[rgb(0,125,223)] px-8 py-3 rounded-full font-primary font-semibold hover:bg-gray-100 transition-colors duration-300">
+          </motion.p>
+          <motion.button 
+            className="bg-white cursor-pointer text-[rgb(0,125,223)] px-8 py-3 rounded-full font-primary font-semibold transition-all duration-300"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 8px 25px rgba(255,255,255,0.3)"
+            }}
+            whileTap={{ scale: 0.98 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.6 }}
+          >
             Contact Us for Partnership
-          </button>
+          </motion.button>
         </motion.div>
       </Container>
     </section>

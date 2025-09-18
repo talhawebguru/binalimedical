@@ -9,54 +9,54 @@ const PartnerCard = ({ partner, index }) => {
   const cardVariants = {
     hidden: { 
       opacity: 0, 
-      y: 50,
-      scale: 0.9
+      y: 40,
+      scale: 0.95
     },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.6,
-        delay: index * 0.05,
-        ease: "easeOut"
+        duration: 0.7,
+        delay: index * 0.03,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
 
   const imageVariants = {
     hover: {
-      scale: 1.1,
-      transition: { duration: 0.3, ease: "easeInOut" }
+      scale: 1.08,
+      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
     },
     initial: {
       scale: 1,
-      transition: { duration: 0.3, ease: "easeInOut" }
+      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
     }
   };
 
   const overlayVariants = {
     hidden: {
       opacity: 0,
-      y: 20
+      y: 15
     },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.3, ease: "easeOut" }
+      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
     }
   };
 
   const glowVariants = {
     hover: {
-      boxShadow: "0 20px 40px rgba(0, 125, 223, 0.2), 0 0 0 1px rgba(0, 125, 223, 0.1)",
-      y: -8,
-      transition: { duration: 0.3, ease: "easeOut" }
+      boxShadow: "0 20px 40px rgba(0, 125, 223, 0.15), 0 0 0 1px rgba(0, 125, 223, 0.1)",
+      y: -6,
+      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
     },
     initial: {
-      boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+      boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
       y: 0,
-      transition: { duration: 0.3, ease: "easeOut" }
+      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
     }
   };
 
@@ -79,8 +79,8 @@ const PartnerCard = ({ partner, index }) => {
         {/* Background gradient that appears on hover */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: isHovered ? 0.05 : 0 }}
-          transition={{ duration: 0.3 }}
+          animate={{ opacity: isHovered ? 0.04 : 0 }}
+          transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="absolute inset-0 bg-gradient-to-br from-[rgb(0,125,223)] to-[rgb(31,43,118)] rounded-2xl"
         />
 
@@ -95,7 +95,7 @@ const PartnerCard = ({ partner, index }) => {
               src={partner.src}
               alt={partner.alt}
               fill
-              className="object-contain filter transition-all duration-300 group-hover:brightness-110"
+              className="object-contain filter transition-all duration-400 group-hover:brightness-110"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             />
           </motion.div>
@@ -104,9 +104,9 @@ const PartnerCard = ({ partner, index }) => {
         {/* Partner info */}
         <div className="relative z-10">
           <motion.h3
-            initial={{ opacity: 0.7 }}
-            animate={{ opacity: isHovered ? 1 : 0.7 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0.8 }}
+            animate={{ opacity: isHovered ? 1 : 0.8 }}
+            transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="font-primary font-semibold text-lg text-[rgb(31,43,118)] mb-2 line-clamp-2"
           >
             {partner.name}
@@ -127,7 +127,7 @@ const PartnerCard = ({ partner, index }) => {
           <motion.div
             initial={{ width: "20%" }}
             animate={{ width: isHovered ? "100%" : "20%" }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="h-0.5 bg-gradient-to-r from-[rgb(0,125,223)] to-[rgb(31,43,118)] rounded-full"
           />
         </div>
@@ -136,19 +136,19 @@ const PartnerCard = ({ partner, index }) => {
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ 
-            opacity: isHovered ? [0, 1, 0] : 0,
+            opacity: isHovered ? [0, 0.8, 0] : 0,
             scale: isHovered ? [0, 1, 1.5] : 0
           }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="absolute top-4 right-4 w-2 h-2 bg-[rgb(0,125,223)] rounded-full"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ 
-            opacity: isHovered ? [0, 1, 0] : 0,
+            opacity: isHovered ? [0, 0.7, 0] : 0,
             scale: isHovered ? [0, 1, 1.2] : 0
           }}
-          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="absolute bottom-4 left-4 w-1.5 h-1.5 bg-[rgb(31,43,118)] rounded-full"
         />
       </motion.div>
