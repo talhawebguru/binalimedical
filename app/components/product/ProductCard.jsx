@@ -1,5 +1,6 @@
+"use client"
 import React from "react";
-import * as motion from "motion/react-client"
+import { motion } from "motion/react";
 import Image from "next/image";
 import laboratoryConsumables from "@/public/images/ourProducts/laboratoryConsumables.jpg";
 import medicalEquipments from "@/public/images/ourProducts/medicalEquipment.jpg";
@@ -115,21 +116,48 @@ const products = [
 
 
 const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94],
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.9 },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: {
-      duration: 1,
-      staggerChildren: 0.3,
-    },
-  },
-};
+      duration: 0.6,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+}
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-};
+const hoverVariants = {
+  hover: {
+    scale: 1.05,
+    y: -8,
+    transition: {
+      duration: 0.3,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  },
+  tap: {
+    scale: 0.98,
+    transition: {
+      duration: 0.2,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+}
 
 const ProductCard = () => {
   return (
@@ -137,32 +165,59 @@ const ProductCard = () => {
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10 sm:px-5"
       variants={containerVariants}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
     >
       {products.map((item, index) => (
         <motion.div
           key={index}
-          className="bg-white shadow-lg rounded-2xl overflow-hidden transition-transform transform hover:scale-105"
+          className="bg-white shadow-lg rounded-2xl overflow-hidden cursor-pointer group"
           variants={itemVariants}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover="hover"
+          whileTap="tap"
+          custom={hoverVariants}
         >
-          <div className="relative w-full h-64">
-            <Image
-              src={item.image}
-              alt={item.title}
-              layout="fill"
-              objectFit="cover"
-            />
+          <div className="relative w-full h-64 overflow-hidden">
+            <motion.div
+              className="w-full h-full"
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              <Image
+                src={item.image}
+                alt={item.title}
+                layout="fill"
+                objectFit="cover"
+                className="transition-all duration-300"
+              />
+            </motion.div>
           </div>
-          <div className="p-4 text-center">
-            <h3 className="text-base font-primary font-bold text-[rgb(3,37,76)]">
+          <motion.div 
+            className="p-4 text-center"
+            initial={{ opacity: 0.8 }}
+            whileHover={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.h3 
+              className="text-base font-primary font-bold text-[rgb(3,37,76)] mb-4"
+              whileHover={{ color: "rgb(7,135,253)" }}
+              transition={{ duration: 0.3 }}
+            >
              <a href={item.link} target="_blank">{item.title}</a>
-            </h3>
-            <button className="mt-4 px-4 py-2 bg-blue-500 text-white font-medium rounded-2xl hover:bg-blue-600 transition">
+            </motion.h3>
+            <motion.button 
+              className="mt-4 px-4 py-2 cursor-pointer bg-blue-500 text-white font-medium rounded-2xl transition-all duration-300"
+              whileHover={{ 
+                backgroundColor: "rgb(7,135,253)",
+                scale: 1.05,
+                boxShadow: "0 8px 25px rgba(7,135,253,0.3)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
               Download Brochure
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </motion.div>
       ))}
     </motion.div>
