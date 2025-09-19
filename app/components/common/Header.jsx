@@ -42,6 +42,7 @@ const Header = () => {
               alt="Bin Ali Medical Logo"
               width={130}
               height={60}
+              priority
             />
           </Link>
 
