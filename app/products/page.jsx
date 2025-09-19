@@ -6,7 +6,7 @@ import ProductCard from "../components/product/ProductCard";
 
 const page = () => {
   return (
-    <section className="bg-[rgb(227,242,255)]">
+    <section className="bg-[rgb(227,242,255)] overflow-x-hidden">
       <Container>
         <div className="py-10">
           <motion.h1 

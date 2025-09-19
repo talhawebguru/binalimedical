@@ -50,7 +50,7 @@ const page = () => {
   };
 
   return (
-    <section className="bg-[rgb(227,242,255)] py-10">
+    <section className="bg-[rgb(227,242,255)] py-10 overflow-x-hidden">
       <Container>
         <motion.h1
           className="font-primary text-3xl font-medium text-[rgb(40,54,85)]"

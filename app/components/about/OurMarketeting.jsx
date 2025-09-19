@@ -83,7 +83,7 @@ const OurMarketeting = () => {
   }
 
   return (
-    <section className="bg-[rgba(7,135,253,0.11)] py-10">
+    <section className="bg-[rgba(7,135,253,0.11)] py-10 overflow-x-hidden">
       <Container>
         <motion.h2
           className="text-center text-[rgb(40,54,85)] font-primary text-2xl font-medium py-8 lg:py-10"

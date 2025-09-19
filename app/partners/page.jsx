@@ -453,7 +453,7 @@ const PartnersPage = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+    <section className="py-16 bg-gradient-to-br from-blue-50 to-white overflow-x-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

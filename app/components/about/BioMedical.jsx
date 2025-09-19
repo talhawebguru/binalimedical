@@ -57,7 +57,7 @@ const BioMedical = () => {
   }
 
   return (
-    <section className="bg-[url('/images/bio-bg.jpg')] bg-cover bg-center bg-no-repeat py-14">
+    <section className="bg-[url('/images/bio-bg.jpg')] bg-cover bg-center bg-no-repeat py-14 overflow-x-hidden">
       <Container>
           <motion.h2
             className="text-white font-primary text-2xl font-medium text-center"

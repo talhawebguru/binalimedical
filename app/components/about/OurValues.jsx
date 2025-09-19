@@ -44,7 +44,7 @@ const OurValues = () => {
   }
 
   return (
-    <section>
+    <section className="overflow-x-hidden">
       <Container>
         <motion.h2
           className="text-center text-[rgb(31,43,118)] font-primary text-2xl font-medium my-12 lg:my-20"

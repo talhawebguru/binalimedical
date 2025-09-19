@@ -4,7 +4,7 @@ import CustomerCard from "../components/customers/CustomerCard";
 const page = () => {
   return (
     <>
-      <div className="bg-[rgb(227,242,255)]">
+      <div className="bg-[rgb(227,242,255)] overflow-x-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-10">
           <h1 className="font-primary text-3xl font-medium text-[rgb(40,54,85)]">
             OUR CUSTOMERS AND MARKETING

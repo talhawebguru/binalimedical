@@ -62,7 +62,7 @@ const page = () => {
   };
 
   return (
-    <section className="bg-[rgb(227,242,255)] py-10">
+    <section className="bg-[rgb(227,242,255)] py-10 overflow-x-hidden">
       <Container>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             <motion.div
