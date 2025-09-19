@@ -58,7 +58,7 @@ const Hero = () => {
     <section className="bg-[linear-gradient(173.07deg,rgba(227,242,255,0.78)_24.32%,hsla(0,0%,100%,0)_91.12%)]">
       <Container>
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 py-12 xl:gap-36 md:gap-20"
+          className="grid grid-cols-1 md:grid-cols-2 py-12 gap-10 xl:gap-36 md:gap-20"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

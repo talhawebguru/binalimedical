@@ -84,23 +84,23 @@ const OurMarketeting = () => {
 
   return (
     <section className="bg-[rgba(7,135,253,0.11)] py-10">
-      <motion.h2
-        className="text-center text-[rgb(40,54,85)] font-primary text-2xl font-medium py-8 lg:py-10"
-        variants={titleVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        OUR MARKETING & SALES TEAM
-      </motion.h2>
       <Container>
-          <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-4 s sm:gap-10"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-          >
+        <motion.h2
+          className="text-center text-[rgb(40,54,85)] font-primary text-2xl font-medium py-8 lg:py-10"
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          OUR MARKETING & SALES TEAM
+        </motion.h2>
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 s sm:gap-10"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
             <motion.div variants={textVariants}>
               <motion.p 
                 className="text-justify mb-8 font-primary text-base text-[rgb(40,54,85)] mt-5"

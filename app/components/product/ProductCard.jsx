@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import laboratoryConsumables from "@/public/images/ourProducts/laboratoryConsumables.jpg";
@@ -129,14 +129,15 @@ const containerVariants = {
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 40, scale: 0.9 },
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
     transition: {
-      duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      duration: 0.5,
+      ease: [0.25, 0.46, 0.45, 0.94],
+      delay: 0.1
     }
   }
 }
@@ -160,19 +161,47 @@ const hoverVariants = {
 }
 
 const ProductCard = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Check if it's mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    // Fallback animation trigger for mobile
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 300);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <motion.div
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10 sm:px-5"
       variants={containerVariants}
       initial="hidden"
+      animate={isMobile && isVisible ? "visible" : "hidden"}
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.05, margin: "0px 0px -50px 0px" }}
     >
       {products.map((item, index) => (
         <motion.div
           key={index}
           className="bg-white shadow-lg rounded-2xl overflow-hidden cursor-pointer group"
           variants={itemVariants}
+          initial="hidden"
+          animate={isMobile && isVisible ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.05 }}
           whileHover="hover"
           whileTap="tap"
           custom={hoverVariants}

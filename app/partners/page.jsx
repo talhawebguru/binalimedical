@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Container from "../components/common/Container";
 import PartnerCard from "../components/partners/PartnerCard";
 import { motion } from "motion/react";
@@ -319,6 +319,29 @@ const partners = [
 ];
 
 const PartnersPage = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Check if it's mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    // Fallback animation trigger for mobile
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 200);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      clearTimeout(timer);
+    };
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -390,8 +413,13 @@ const PartnersPage = () => {
         <motion.div
           variants={containerVariants}
           initial="hidden"
+          animate={isMobile && isVisible ? "visible" : "hidden"}
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ 
+            once: true, 
+            amount: isMobile ? 0.05 : 0.3,
+            margin: "-30px"
+          }}
           className="text-center mb-16"
         >
           <motion.h1
@@ -414,8 +442,13 @@ const PartnersPage = () => {
         <motion.div
           variants={gridVariants}
           initial="hidden"
+          animate={isMobile && isVisible ? "visible" : "hidden"}
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ 
+            once: true, 
+            amount: isMobile ? 0.05 : 0.1,
+            margin: "-50px"
+          }}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
           {partners.map((partner, index) => (
