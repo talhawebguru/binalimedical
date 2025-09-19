@@ -51,6 +51,25 @@ import Logo42 from "@/public/images/binalilogo/Mindray_logo.png";
 import Logo43 from "@/public/images/binalilogo/primed-logo_n 1.png";
 import Logo44 from "@/public/images/binalilogo/rendition-1-1024x197 1.png";
 
+// Import dental logos
+import DentalLogo1 from "@/public/images/dentallogo/bensan.jpg";
+import DentalLogo2 from "@/public/images/dentallogo/bti.jpg";
+import DentalLogo3 from "@/public/images/dentallogo/citage.png";
+import DentalLogo4 from "@/public/images/dentallogo/defendix.png";
+import DentalLogo5 from "@/public/images/dentallogo/denfiz.jpg";
+import DentalLogo6 from "@/public/images/dentallogo/detax.png";
+import DentalLogo7 from "@/public/images/dentallogo/dia-dent.png";
+import DentalLogo8 from "@/public/images/dentallogo/envisam.jpg";
+import DentalLogo9 from "@/public/images/dentallogo/henry.jpg";
+import DentalLogo10 from "@/public/images/dentallogo/kide-e-dental.jpg";
+import DentalLogo11 from "@/public/images/dentallogo/major.png";
+import DentalLogo12 from "@/public/images/dentallogo/nanda-scanner.png";
+import DentalLogo13 from "@/public/images/dentallogo/primadental.jpg";
+import DentalLogo14 from "@/public/images/dentallogo/pulpdent.png";
+import DentalLogo15 from "@/public/images/dentallogo/safecare-medical.png";
+import DentalLogo16 from "@/public/images/dentallogo/voco.png";
+import DentalLogo17 from "@/public/images/dentallogo/young.png";
+
 const partners = [
   {
     src: Logo1,
@@ -315,6 +334,109 @@ const partners = [
     alt: "Rendition",
     name: "Rendition Medical",
     category: "Healthcare",
+  },
+  // Dental Partners
+  {
+    src: DentalLogo1,
+    alt: "Bensan",
+    name: "Bensan Dental",
+    category: "Dental Equipment",
+  },
+  {
+    src: DentalLogo2,
+    alt: "BTI",
+    name: "BTI Biotechnology Institute",
+    category: "Dental Implants",
+  },
+  {
+    src: DentalLogo3,
+    alt: "Citage",
+    name: "Citage Dental",
+    category: "Dental Technology",
+  },
+  {
+    src: DentalLogo4,
+    alt: "Defendix",
+    name: "Defendix Dental",
+    category: "Dental Care",
+  },
+  {
+    src: DentalLogo5,
+    alt: "Denfiz",
+    name: "Denfiz Dental Solutions",
+    category: "Dental Equipment",
+  },
+  {
+    src: DentalLogo6,
+    alt: "Detax",
+    name: "Detax Dental",
+    category: "Dental Materials",
+  },
+  {
+    src: DentalLogo7,
+    alt: "Dia-Dent",
+    name: "Dia-Dent Dental",
+    category: "Dental Instruments",
+  },
+  {
+    src: DentalLogo8,
+    alt: "Envisam",
+    name: "Envisam",
+    category: "Dental Instruments",
+  },
+  {
+    src: DentalLogo9,
+    alt: "Henry",
+    name: "Henry Schein Dental",
+    category: "Dental Supplies",
+  },
+  {
+    src: DentalLogo10,
+    alt: "Kide-E-Dental",
+    name: "Kide-E-Dental",
+    category: "Dental Equipment",
+  },
+  {
+    src: DentalLogo11,
+    alt: "Major",
+    name: "Major Dental",
+    category: "Dental Instruments",
+  },
+  {
+    src: DentalLogo12,
+    alt: "Nanda Scanner",
+    name: "Nanda Scanner",
+    category: "Dental Imaging",
+  },
+  {
+    src: DentalLogo13,
+    alt: "Prima Dental",
+    name: "Prima Dental",
+    category: "Dental Solutions",
+  },
+  {
+    src: DentalLogo14,
+    alt: "Pulpdent",
+    name: "Pulpdent Corporation",
+    category: "Dental Materials",
+  },
+  {
+    src: DentalLogo15,
+    alt: "SafeCare Medical",
+    name: "SafeCare Medical",
+    category: "Medical Dental",
+  },
+  {
+    src: DentalLogo16,
+    alt: "Voco",
+    name: "Voco Dental",
+    category: "Dental Materials",
+  },
+  {
+    src: DentalLogo17,
+    alt: "Young",
+    name: "Young Dental",
+    category: "Dental Equipment",
   },
 ];
 

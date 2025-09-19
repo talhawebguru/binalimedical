@@ -48,6 +48,25 @@ import Logo42 from "@/public/images/binalilogo/Mindray_logo.png";
 import Logo43 from "@/public/images/binalilogo/primed-logo_n 1.png";
 import Logo44 from "@/public/images/binalilogo/rendition-1-1024x197 1.png";
 
+// Import dental logos
+import DentalLogo1 from "@/public/images/dentallogo/bensan.jpg";
+import DentalLogo2 from "@/public/images/dentallogo/bti.jpg";
+import DentalLogo3 from "@/public/images/dentallogo/citage.png";
+import DentalLogo4 from "@/public/images/dentallogo/defendix.png";
+import DentalLogo5 from "@/public/images/dentallogo/denfiz.jpg";
+import DentalLogo6 from "@/public/images/dentallogo/detax.png";
+import DentalLogo7 from "@/public/images/dentallogo/dia-dent.png";
+import DentalLogo8 from "@/public/images/dentallogo/envisam.jpg";
+import DentalLogo9 from "@/public/images/dentallogo/henry.jpg";
+import DentalLogo10 from "@/public/images/dentallogo/kide-e-dental.jpg";
+import DentalLogo11 from "@/public/images/dentallogo/major.png";
+import DentalLogo12 from "@/public/images/dentallogo/nanda-scanner.png";
+import DentalLogo13 from "@/public/images/dentallogo/primadental.jpg";
+import DentalLogo14 from "@/public/images/dentallogo/pulpdent.png";
+import DentalLogo15 from "@/public/images/dentallogo/safecare-medical.png";
+import DentalLogo16 from "@/public/images/dentallogo/voco.png";
+import DentalLogo17 from "@/public/images/dentallogo/young.png";
+
 
 const images = [
   { src: Logo1, alt: "Binalilogo" },
@@ -93,7 +112,25 @@ const images = [
   { src: Logo41, alt: "Merit Organics" },
   { src: Logo42, alt: "Mindray" },
   { src: Logo43, alt: "Primed" },
-  { src: Logo44, alt: "Rendition" }
+  { src: Logo44, alt: "Rendition" },
+  // Dental logos
+  { src: DentalLogo1, alt: "Bensan" },
+  { src: DentalLogo2, alt: "BTI" },
+  { src: DentalLogo3, alt: "Citage" },
+  { src: DentalLogo4, alt: "Defendix" },
+  { src: DentalLogo5, alt: "Denfiz" },
+  { src: DentalLogo6, alt: "Detax" },
+  { src: DentalLogo7, alt: "Dia-Dent" },
+  { src: DentalLogo8, alt: "Envisam" },
+  { src: DentalLogo9, alt: "Henry" },
+  { src: DentalLogo10, alt: "Kide-e-Dental" },
+  { src: DentalLogo11, alt: "Major" },
+  { src: DentalLogo12, alt: "Nanda Scanner" },
+  { src: DentalLogo13, alt: "Primadental" },
+  { src: DentalLogo14, alt: "Pulpdent" },
+  { src: DentalLogo15, alt: "Safecare Medical" },
+  { src: DentalLogo16, alt: "Voco" },
+  { src: DentalLogo17, alt: "Young" }
 ];
 
 const OurPartners = () => {
@@ -119,8 +156,8 @@ const OurPartners = () => {
   const secondRowWidth = duplicatedSecondRow.length * imgWidth;
   
   // Adjust speeds for each row
-  const firstRowDuration = firstRowWidth / 50;
-  const secondRowDuration = secondRowWidth / 40; // Slightly different speed for visual interest
+  const firstRowDuration = firstRowWidth / 100;
+  const secondRowDuration = secondRowWidth / 80; // Slightly different speed for visual interest
 
 
 

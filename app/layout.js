@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={` ${robotoCondensed.variable} ${montserrat.variable} ${anton.variable} ${nunito.variable} antialiased`}
+        className={` ${robotoCondensed.variable} ${montserrat.variable} ${anton.variable} ${nunito.variable} antialiased overflow-x-hidden`}
       >
         <Header/>
         {children}
