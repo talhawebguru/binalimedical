@@ -2,7 +2,6 @@ import Hero from "./components/home/Hero";
 import About from "./components/home/About";
 import OurPartners from "./components/home/OurPartners";
 import CEOMessage from "./components/home/CEOMessage";
-import Head from "next/head";
 
 export const metadata = {
   title: "Bin Ali Medical Supplies Leading Healthcare Solutions in UAE",
@@ -235,14 +234,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Head>
-        <link
-          rel="preload"
-          as="image"
-          href="/images/hero-bg.jpg"
-          type="image/jpeg"
-        />
-      </Head>
       <Hero />
       <About />
       <OurPartners />

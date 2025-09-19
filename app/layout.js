@@ -3,12 +3,10 @@ import "./globals.css";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 
-
 const robotoCondensed = Roboto_Condensed({
   variable: "--font-roboto-condensed",
   subsets: ["latin"],
 });
-
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -26,10 +24,10 @@ const nunito = Nunito({
   subsets: ["latin"],
 });
 
-
 export const metadata = {
   title: "Medical Supplies in United Arab Emirates",
-  description: "Medical Supplies in United Arab Emirates | Bin Ali Medical Supplies",
+  description:
+    "Medical Supplies in United Arab Emirates | Bin Ali Medical Supplies",
 };
 
 export default function RootLayout({ children }) {
@@ -37,13 +35,19 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="manifest" href="/site.webmanifest" />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-bg.jpg"
+          type="image/jpeg"
+        />
       </head>
       <body
         className={` ${robotoCondensed.variable} ${montserrat.variable} ${anton.variable} ${nunito.variable} antialiased overflow-x-hidden`}
       >
-        <Header/>
+        <Header />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

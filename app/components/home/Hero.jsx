@@ -1,6 +1,7 @@
 import * as motion from "motion/react-client";
 import Container from "../common/Container";
 import Link from "next/link";
+import Image from "next/image";
 
 const Hero = () => {
   const containerVariants = {
