@@ -35,6 +35,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body
         className={` ${robotoCondensed.variable} ${montserrat.variable} ${anton.variable} ${nunito.variable} antialiased overflow-x-hidden`}
       >

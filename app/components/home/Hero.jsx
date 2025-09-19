@@ -1,9 +1,26 @@
-import React from "react";
+"use client";
+import React, {useEffect} from "react";
 import * as motion from "motion/react-client";
 import Container from "../common/Container";
 import Link from "next/link";
 
 const Hero = () => {
+  // Preload hero background image
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.href = '/images/hero-bg.jpg';
+    link.as = 'image';
+    link.type = 'image/jpeg';
+    document.head.appendChild(link);
+    
+    return () => {
+      if (document.head.contains(link)) {
+        document.head.removeChild(link);
+      }
+    };
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

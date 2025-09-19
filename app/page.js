@@ -59,8 +59,6 @@ export const metadata = {
   alternates: {
     canonical: "https://binalimed.com/",
   },
-  category: "Healthcare",
-  classification: "Medical Supplies",
   other: {
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
