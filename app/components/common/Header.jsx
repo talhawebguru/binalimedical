@@ -53,37 +53,79 @@ const Header = () => {
                 }`}
               >
                 <Link href={"/"}>
-                  <li className="cursor-pointer hover:text-primary transition">
+                  <li className={`cursor-pointer hover:text-primary transition ${
+                    pathname === "/" 
+                      ? isHomePage 
+                        ? "text-white font-bold border-b-2 border-white pb-1" 
+                        : "text-[#202B76] font-semibold"
+                      : ""
+                  }`}>
                     Home
                   </li>
                 </Link>
                 <Link href={"/about"}>
-                  <li className="cursor-pointer hover:text-primary transition">
+                  <li className={`cursor-pointer hover:text-primary transition ${
+                    pathname === "/about" 
+                      ? isHomePage 
+                        ? "text-white font-semibold" 
+                        : "text-[#202B76] font-semibold"
+                      : ""
+                  }`}>
                     About
                   </li>
                 </Link>
                 <Link href={"/products"}>
-                  <li className="cursor-pointer hover:text-primary transition">
+                  <li className={`cursor-pointer hover:text-primary transition ${
+                    pathname === "/products" 
+                      ? isHomePage 
+                        ? "text-white font-semibold" 
+                        : "text-[#202B76] font-semibold"
+                      : ""
+                  }`}>
                     Our Products
                   </li>
                 </Link>
                 <Link href={"/partners"}>
-                  <li className="cursor-pointer hover:text-primary transition">
+                  <li className={`cursor-pointer hover:text-primary transition ${
+                    pathname === "/partners" 
+                      ? isHomePage 
+                        ? "text-white font-semibold" 
+                        : "text-[#202B76] font-semibold"
+                      : ""
+                  }`}>
                     Our Partners
                   </li>
                 </Link>
                 <Link href={"/customers"}>
-                  <li className="cursor-pointer hover:text-primary transition">
+                  <li className={`cursor-pointer hover:text-primary transition ${
+                    pathname === "/customers" 
+                      ? isHomePage 
+                        ? "text-white font-semibold" 
+                        : "text-[#202B76] font-semibold"
+                      : ""
+                  }`}>
                     Customers
                   </li>
                 </Link>
                 <Link href={"/careers"}>
-                  <li className="cursor-pointer hover:text-primary transition">
+                  <li className={`cursor-pointer hover:text-primary transition ${
+                    pathname === "/careers" 
+                      ? isHomePage 
+                        ? "text-white font-semibold" 
+                        : "text-[#202B76] font-semibold"
+                      : ""
+                  }`}>
                     Careers
                   </li>
                 </Link>
                 <Link href={"/contact"}>
-                  <li className="cursor-pointer hover:text-primary transition">
+                  <li className={`cursor-pointer hover:text-primary transition ${
+                    pathname === "/contact" 
+                      ? isHomePage 
+                        ? "text-white font-semibold" 
+                        : "text-[#202B76] font-semibold"
+                      : ""
+                  }`}>
                     Contact
                   </li>
                 </Link>
@@ -148,37 +190,51 @@ const Header = () => {
             <nav className="mt-10">
               <ul className="flex flex-col space-y-6 text-lg font-medium text-gray-900">
                      <Link href={"/"} onClick={() => setIsMobileMenuOpen(false)}>
-                     <li className="cursor-pointer hover:text-primary transition">
+                     <li className={`cursor-pointer hover:text-primary transition ${
+                       pathname === "/" ? "text-[#202B76] font-bold" : ""
+                     }`}>
                        Home
                      </li>
                    </Link>
                    <Link href={"/about"} onClick={() => setIsMobileMenuOpen(false)}>
-                     <li className="cursor-pointer hover:text-primary transition">
+                     <li className={`cursor-pointer hover:text-primary transition ${
+                       pathname === "/about" ? "text-[#202B76] font-bold" : ""
+                     }`}>
                        About
                      </li>
                    </Link>
                    <Link href={"/products"} onClick={() => setIsMobileMenuOpen(false)}>
-                     <li className="cursor-pointer hover:text-primary transition">
+                     <li className={`cursor-pointer hover:text-primary transition ${
+                       pathname === "/products" ? "text-[#202B76] font-bold" : ""
+                     }`}>
                        Our Products
                      </li>
                    </Link>
                    <Link href={"/partners"} onClick={() => setIsMobileMenuOpen(false)}>
-                     <li className="cursor-pointer hover:text-primary transition">
+                     <li className={`cursor-pointer hover:text-primary transition ${
+                       pathname === "/partners" ? "text-[#202B76] font-bold" : ""
+                     }`}>
                        Partners
                      </li>
                    </Link>
                    <Link href={"/customers"} onClick={() => setIsMobileMenuOpen(false)}>
-                     <li className="cursor-pointer hover:text-primary transition">
+                     <li className={`cursor-pointer hover:text-primary transition ${
+                       pathname === "/customers" ? "text-[#202B76] font-bold" : ""
+                     }`}>
                        Customers
                      </li>
                    </Link>
                    <Link href={"/careers"} onClick={() => setIsMobileMenuOpen(false)}>
-                     <li className="cursor-pointer hover:text-primary transition">
+                     <li className={`cursor-pointer hover:text-primary transition ${
+                       pathname === "/careers" ? "text-[#202B76] font-bold" : ""
+                     }`}>
                        Careers
                      </li>
                    </Link>
                    <Link href={"/contact"} onClick={() => setIsMobileMenuOpen(false)}>
-                     <li className="cursor-pointer hover:text-primary transition">
+                     <li className={`cursor-pointer hover:text-primary transition ${
+                       pathname === "/contact" ? "text-[#202B76] font-bold" : ""
+                     }`}>
                        Contact
                      </li>
                    </Link>
