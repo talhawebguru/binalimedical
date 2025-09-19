@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import laboratoryConsumables from "@/public/images/ourProducts/laboratoryConsumables.jpg";
@@ -120,133 +120,57 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94],
-      staggerChildren: 0.1,
-      delayChildren: 0.2
+      duration: 0.6,
+      staggerChildren: 0.05
     }
   }
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1,
     transition: {
-      duration: 0.5,
-      ease: [0.25, 0.46, 0.45, 0.94],
-      delay: 0.1
-    }
-  }
-}
-
-const hoverVariants = {
-  hover: {
-    scale: 1.05,
-    y: -8,
-    transition: {
-      duration: 0.3,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  },
-  tap: {
-    scale: 0.98,
-    transition: {
-      duration: 0.2,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      duration: 0.4
     }
   }
 }
 
 const ProductCard = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    // Check if it's mobile
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    // Fallback animation trigger for mobile
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 300);
-
-    return () => {
-      window.removeEventListener('resize', checkMobile);
-      clearTimeout(timer);
-    };
-  }, []);
-
   return (
     <motion.div
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10 sm:px-5"
       variants={containerVariants}
       initial="hidden"
-      animate={isMobile && isVisible ? "visible" : "hidden"}
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.05, margin: "0px 0px -50px 0px" }}
+      animate="visible"
     >
       {products.map((item, index) => (
         <motion.div
           key={index}
           className="bg-white shadow-lg rounded-2xl overflow-hidden cursor-pointer group"
           variants={itemVariants}
-          initial="hidden"
-          animate={isMobile && isVisible ? "visible" : "hidden"}
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.05 }}
-          whileHover="hover"
-          whileTap="tap"
-          custom={hoverVariants}
+          whileHover={{ scale: 1.02, y: -4 }}
+          whileTap={{ scale: 0.98 }}
+          transition={{ duration: 0.2 }}
         >
           <div className="relative w-full h-64 overflow-hidden">
-            <motion.div
-              className="w-full h-full"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-            >
-              <Image
-                src={item.image}
-                alt={item.title}
-                layout="fill"
-                objectFit="cover"
-                className="transition-all duration-300"
-              />
-            </motion.div>
+            <Image
+              src={item.image}
+              alt={item.title}
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-300 group-hover:scale-105"
+            />
           </div>
-          <motion.div 
-            className="p-4 text-center"
-            initial={{ opacity: 0.8 }}
-            whileHover={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <motion.h3 
-              className="text-base font-primary font-bold text-[rgb(3,37,76)] mb-4"
-              whileHover={{ color: "rgb(7,135,253)" }}
-              transition={{ duration: 0.3 }}
-            >
+          <div className="p-4 text-center">
+            <h3 className="text-base font-primary font-bold text-[rgb(3,37,76)] mb-4 group-hover:text-blue-600 transition-colors duration-300">
              <a href={item.link} target="_blank">{item.title}</a>
-            </motion.h3>
-            <motion.button 
-              className="mt-4 px-4 py-2 cursor-pointer bg-blue-500 text-white font-medium rounded-2xl transition-all duration-300"
-              whileHover={{ 
-                backgroundColor: "rgb(7,135,253)",
-                scale: 1.05,
-                boxShadow: "0 8px 25px rgba(7,135,253,0.3)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-            >
+            </h3>
+            <button className="mt-4 px-4 py-2 cursor-pointer bg-blue-500 text-white font-medium rounded-2xl transition-all duration-300 hover:bg-blue-600 hover:scale-105">
               Download Brochure
-            </motion.button>
-          </motion.div>
+            </button>
+          </div>
         </motion.div>
       ))}
     </motion.div>

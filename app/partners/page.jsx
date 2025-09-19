@@ -1,8 +1,9 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Container from "../components/common/Container";
 import PartnerCard from "../components/partners/PartnerCard";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 // Import all partner logos (same as OurPartners component)
 import Logo1 from "@/public/images/binalilogo/dr.reddy.png";
@@ -49,7 +50,6 @@ import Logo41 from "@/public/images/binalilogo/meritorganics-comp255367 1.png";
 import Logo42 from "@/public/images/binalilogo/Mindray_logo.png";
 import Logo43 from "@/public/images/binalilogo/primed-logo_n 1.png";
 import Logo44 from "@/public/images/binalilogo/rendition-1-1024x197 1.png";
-import Link from "next/link";
 
 const partners = [
   {
@@ -319,136 +319,41 @@ const partners = [
 ];
 
 const PartnersPage = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    // Check if it's mobile
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    // Fallback animation trigger for mobile
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 200);
-
-    return () => {
-      window.removeEventListener('resize', checkMobile);
-      clearTimeout(timer);
-    };
-  }, []);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
-        staggerChildren: 0.08,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
-    },
-  };
-
-  const subtitleVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.7,
-        ease: [0.25, 0.46, 0.45, 0.94],
-        delay: 0.2,
-      },
-    },
-  };
-
-  const gridVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
         duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
-        staggerChildren: 0.05,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const ctaVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
-    },
+        staggerChildren: 0.03
+      }
+    }
   };
 
   return (
     <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
       <Container>
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isMobile && isVisible ? "visible" : "hidden"}
-          whileInView="visible"
-          viewport={{ 
-            once: true, 
-            amount: isMobile ? 0.05 : 0.3,
-            margin: "-30px"
-          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <motion.h1
-            variants={titleVariants}
-            className="text-4xl md:text-5xl font-primary font-bold text-[rgb(31,43,118)] mb-6"
-          >
+          <h1 className="text-4xl md:text-5xl font-primary font-bold text-[rgb(31,43,118)] mb-6">
             Our Trusted Partners
-          </motion.h1>
-          <motion.p
-            variants={subtitleVariants}
-            className="text-lg text-[rgb(40,54,85)] font-primary max-w-3xl mx-auto leading-relaxed"
-          >
+          </h1>
+          <p className="text-lg text-[rgb(40,54,85)] font-primary max-w-3xl mx-auto leading-relaxed">
             We collaborate with leading healthcare companies worldwide to
             deliver excellence in medical supplies and solutions. Our
             partnerships enable us to provide cutting-edge technology and
             innovative healthcare products.
-          </motion.p>
+          </p>
         </motion.div>
 
         <motion.div
-          variants={gridVariants}
+          variants={containerVariants}
           initial="hidden"
-          animate={isMobile && isVisible ? "visible" : "hidden"}
-          whileInView="visible"
-          viewport={{ 
-            once: true, 
-            amount: isMobile ? 0.05 : 0.1,
-            margin: "-50px"
-          }}
+          animate="visible"
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
           {partners.map((partner, index) => (
@@ -457,58 +362,22 @@ const PartnersPage = () => {
         </motion.div>
 
         <motion.div
-          variants={ctaVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16 bg-[rgb(0,125,223)] rounded-2xl p-8 text-white"
         >
-          <motion.h3
-            className="text-2xl font-primary font-bold mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.6,
-              ease: [0.25, 0.46, 0.45, 0.94],
-              delay: 0.2,
-            }}
-          >
+          <h3 className="text-2xl font-primary font-bold mb-4">
             Interested in Partnership?
-          </motion.h3>
-          <motion.p
-            className="text-lg mb-6 opacity-90"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.6,
-              ease: [0.25, 0.46, 0.45, 0.94],
-              delay: 0.4,
-            }}
-          >
+          </h3>
+          <p className="text-lg mb-6 opacity-90">
             Join our network of trusted partners and help us deliver exceptional
             healthcare solutions.
-          </motion.p>
+          </p>
           <Link href="/contact">
-            <motion.button
-              className="bg-white cursor-pointer text-[rgb(0,125,223)] px-8 py-3 rounded-full font-primary font-semibold transition-all duration-300"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 8px 25px rgba(255,255,255,0.3)",
-              }}
-              whileTap={{ scale: 0.98 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.4,
-                ease: [0.25, 0.46, 0.45, 0.94],
-                delay: 0.1,
-              }}
-            >
+            <button className="bg-white cursor-pointer text-[rgb(0,125,223)] px-8 py-3 rounded-full font-primary font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
               Contact Us for Partnership
-            </motion.button>
+            </button>
           </Link>
         </motion.div>
       </Container>

@@ -1,62 +1,18 @@
 "use client"
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 
 const PartnerCard = ({ partner, index }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   const cardVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 40,
-      scale: 0.95
-    },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
       transition: {
-        duration: 0.7,
-        delay: index * 0.03,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        duration: 0.4,
+        delay: index * 0.02
       }
-    }
-  };
-
-  const imageVariants = {
-    hover: {
-      scale: 1.08,
-      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
-    },
-    initial: {
-      scale: 1,
-      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
-    }
-  };
-
-  const overlayVariants = {
-    hidden: {
-      opacity: 0,
-      y: 15
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
-    }
-  };
-
-  const glowVariants = {
-    hover: {
-      boxShadow: "0 20px 40px rgba(0, 125, 223, 0.15), 0 0 0 1px rgba(0, 125, 223, 0.1)",
-      y: -6,
-      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
-    },
-    initial: {
-      boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
-      y: 0,
-      transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
     }
   };
 
@@ -64,94 +20,34 @@ const PartnerCard = ({ partner, index }) => {
     <motion.div
       variants={cardVariants}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.05 }}
-      whileHover="hover"
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
+      animate="visible"
+      whileHover={{ scale: 1.02, y: -2 }}
+      transition={{ duration: 0.2 }}
       className="group cursor-pointer"
     >
-      <motion.div
-        variants={glowVariants}
-        animate={isHovered ? "hover" : "initial"}
-        className="bg-white rounded-2xl p-6 h-full border border-gray-100 overflow-hidden relative"
-      >
-        {/* Background gradient that appears on hover */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isHovered ? 0.04 : 0 }}
-          transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="absolute inset-0 bg-gradient-to-br from-[rgb(0,125,223)] to-[rgb(31,43,118)] rounded-2xl"
-        />
-
+      <div className="bg-white rounded-2xl p-6 h-full border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300">
         {/* Logo container */}
         <div className="relative h-32 mb-4 flex items-center justify-center overflow-hidden">
-          <motion.div
-            variants={imageVariants}
-            animate={isHovered ? "hover" : "initial"}
-            className="relative w-full h-full"
-          >
-            <Image
-              src={partner.src}
-              alt={partner.alt}
-              fill
-              className="object-contain filter transition-all duration-400 group-hover:brightness-110"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-            />
-          </motion.div>
-        </div>
-
-        {/* Partner info */}
-        <div className="relative z-10">
-          <motion.h3
-            initial={{ opacity: 0.8 }}
-            animate={{ opacity: isHovered ? 1 : 0.8 }}
-            transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-primary font-semibold text-lg text-[rgb(31,43,118)] mb-2 line-clamp-2"
-          >
-            {partner.name}
-          </motion.h3>
-          
-          <motion.div
-            variants={overlayVariants}
-            initial="hidden"
-            animate={isHovered ? "visible" : "hidden"}
-            className="mb-3"
-          >
-            <span className="inline-block bg-[rgb(0,125,223)] text-white text-xs px-3 py-1 rounded-full font-primary font-medium">
-              {partner.category}
-            </span>
-          </motion.div>
-
-          {/* Decorative element */}
-          <motion.div
-            initial={{ width: "20%" }}
-            animate={{ width: isHovered ? "100%" : "20%" }}
-            transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="h-0.5 bg-gradient-to-r from-[rgb(0,125,223)] to-[rgb(31,43,118)] rounded-full"
+          <Image
+            src={partner.src}
+            alt={partner.alt}
+            fill
+            className="object-contain transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           />
         </div>
 
-        {/* Hover effect particles */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ 
-            opacity: isHovered ? [0, 0.8, 0] : 0,
-            scale: isHovered ? [0, 1, 1.5] : 0
-          }}
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="absolute top-4 right-4 w-2 h-2 bg-[rgb(0,125,223)] rounded-full"
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ 
-            opacity: isHovered ? [0, 0.7, 0] : 0,
-            scale: isHovered ? [0, 1, 1.2] : 0
-          }}
-          transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="absolute bottom-4 left-4 w-1.5 h-1.5 bg-[rgb(31,43,118)] rounded-full"
-        />
-      </motion.div>
+        {/* Partner info */}
+        <div className="text-center">
+          <h3 className="font-primary font-semibold text-lg text-[rgb(31,43,118)] mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
+            {partner.name}
+          </h3>
+          
+          <span className="inline-block bg-[rgb(0,125,223)] text-white text-xs px-3 py-1 rounded-full font-primary font-medium opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+            {partner.category}
+          </span>
+        </div>
+      </div>
     </motion.div>
   );
 };
