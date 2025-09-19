@@ -119,6 +119,7 @@ const Header = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            key="mobile-backdrop"
             className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-md z-30"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -129,6 +130,7 @@ const Header = () => {
 
         {isMobileMenuOpen && (
           <motion.div
+            key="mobile-menu"
             className="fixed top-0 right-0 w-3/4 max-w-[280px] h-full bg-white shadow-lg z-40 flex flex-col items-center py-6"
             variants={menuVariants}
             initial="hidden"
